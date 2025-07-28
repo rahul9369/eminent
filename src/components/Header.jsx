@@ -17,10 +17,9 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <Link 
+            <Link
               to="/"
-              className="text-3xl font-bold text-gray-800 hover:text-blue-600 transition-colors"
-            >
+              className="text-3xl font-bold text-gray-800 hover:text-blue-600 transition-colors">
               Eminent
               <br />
               <p className="text-[18px] font-semibold"> Audio & Video</p>
@@ -142,11 +141,11 @@ const Header = () => {
               Services
             </Link>
 
-            <Link
+            {/* <Link
               to="/about"
               className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">
               About
-            </Link>
+            </Link> */}
 
             <Link
               to="/contact"
@@ -213,4 +212,4 @@ const Header = () => {
   );
 };
 
-export default Header; 
+export default Header;

@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+/* global.css or inside <style jsx global> in Next.js */
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-right {
+  animation: fade-in-right 0.8s ease-out forwards;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
