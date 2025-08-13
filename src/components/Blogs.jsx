@@ -5,18 +5,19 @@ const Blogs = () => {
     {
       date: "May 22, 2025",
       title:
-        "EAW Features Pink Noise Professionals for Pioneering Anya Deployment in India",
+        "Eminent Showcases Groundbreaking Audio Solutions at Global AV Expo 2025",
       gradient: "from-blue-400 to-purple-500",
     },
     {
       date: "May 22, 2025",
       title:
-        "Pink Noise Shines as Elipson Wins Best Home Theatre Brand Award at NCN AV Awards 2024",
+        "Eminent Wins Prestigious Best Pro Audio Brand Award at NCN AV Awards 2024",
       gradient: "from-green-400 to-blue-500",
     },
     {
       date: "May 21, 2025",
-      title: "Difference Between Line Array and Column Array Speakers",
+      title:
+        "Eminent Experts Explain the Key Differences Between Line Array and Column Array Systems",
       gradient: "from-purple-400 to-pink-500",
     },
   ];
@@ -38,8 +39,7 @@ const Blogs = () => {
             <div
               key={index}
               className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div
-                className={`h-48 bg-gradient-to-br ${blog.gradient}`}></div>
+              <div className={`h-48 bg-gradient-to-br ${blog.gradient}`}></div>
               <div className="p-6">
                 <p className="text-sm text-gray-500 mb-2">{blog.date}</p>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -63,4 +63,4 @@ const Blogs = () => {
   );
 };
 
-export default Blogs; 
+export default Blogs;

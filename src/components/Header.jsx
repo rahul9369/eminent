@@ -38,7 +38,7 @@ const Header = () => {
               <button className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">
                 Pro Audio & Visual
               </button>
-              <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              {/* <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                 <div className="py-1">
                   <a
                     href="#"
@@ -66,7 +66,7 @@ const Header = () => {
                     Work Pro
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <Link
@@ -79,7 +79,7 @@ const Header = () => {
               <button className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">
                 Applications
               </button>
-              <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              {/* <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                 <div className="py-1">
                   <a
                     href="#"
@@ -132,7 +132,7 @@ const Header = () => {
                     Smart Classroom
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <Link

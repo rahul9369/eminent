@@ -6,7 +6,7 @@ import Products from "../components/Products";
 import Industries from "../components/Industries";
 import Clients from "../components/Clients";
 import Blogs from "../components/Blogs";
-import Social from "../components/Social";
+// import Social from "../components/Social";
 
 const Home = () => {
   return (
@@ -18,9 +18,9 @@ const Home = () => {
       <Industries />
       <Clients />
       <Blogs />
-      <Social />
+      {/* <Social /> */}
     </>
   );
 };
 
-export default Home; 
+export default Home;
