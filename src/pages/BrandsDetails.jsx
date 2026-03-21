@@ -52,7 +52,7 @@ const BrandProducts = () => {
               index % 2 !== 0 ? "md:flex-row-reverse" : ""
             } bg-white/70 backdrop-blur-lg border border-gray-200 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500`}>
             {/* 🔥 Image Section */}
-            <div className="md:w-[65%] w-full h-64 md:h-80 overflow-hidden relative">
+            <div className="md:w-[65%] w-full h-64 md:h-80   overflow-hidden relative">
               <img
                 src={item.img}
                 alt={item.name}
