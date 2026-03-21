@@ -14,69 +14,97 @@ const Services = () => {
     {
       title: "Distribution",
       description:
-        "We distribute, promote some of the finest brands of professional audio equipment through our efficient channel partners throughout India.",
-      icon: <FaTruck />,
+        "Efficient distribution of world-class professional audio equipment through trusted channel partners.",
+      icon: FaTruck,
     },
     {
       title: "Consulting",
       description:
-        "We define requirements; analyze problems & areas of improvement by providing specialized expertise with efficient business practices.",
-      icon: <FaComments />,
+        "Expert consultation to analyze requirements and deliver optimized audio solutions.",
+      icon: FaComments,
     },
     {
       title: "Integration",
       description:
-        "We create unique solutions which add value to a system through new functionalities provided by independent applications of different systems.",
-      icon: <FaProjectDiagram />,
+        "Seamless integration of advanced systems to create powerful and scalable solutions.",
+      icon: FaProjectDiagram,
     },
     {
       title: "Support",
       description:
-        "We distribute, promote some of the finest brands of professional audio equipment through our efficient channel partners throughout India.",
-      icon: <FaHeadset />,
+        "Reliable support services ensuring smooth performance and long-term system stability.",
+      icon: FaHeadset,
     },
     {
       title: "Training",
       description:
-        "We define requirements; analyze problems & areas of improvement by providing specialized expertise with efficient business practices.",
-      icon: <FaChalkboardTeacher />,
+        "Professional training programs to empower teams with modern audio technologies.",
+      icon: FaChalkboardTeacher,
     },
     {
       title: "Design",
       description:
-        "We create unique solutions which add value to a system through new functionalities provided by independent applications of different systems.",
-      icon: <FaPencilRuler />,
+        "Creative and technical system design tailored for premium sound experiences.",
+      icon: FaPencilRuler,
     },
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+      <div className="max-w-7xl mx-auto px-4">
+        {/* 🔥 Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">WHAT WE DO</h2>
+          <h2 className="text-sm uppercase tracking-widest text-gray-500 mb-3">
+            Services
+          </h2>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+            What We Do
+          </h1>
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+            Delivering innovative and reliable audio solutions with expertise,
+            precision, and cutting-edge technology.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center hover:shadow-xl transition-all duration-300">
+        {/* 🔥 Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+
+            return (
               <motion.div
-                whileHover={{ scale: 1.2, rotate: 5 }}
-                transition={{ type: "spring", stiffness: 200 }}
-                className="text-4xl text-teal-600 mb-4">
-                {service.icon}
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group relative bg-white/70 backdrop-blur-xl border border-gray-200 rounded-3xl p-8 text-center shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                {/* Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+
+                {/* 🔥 Icon Circle */}
+                <motion.div
+                  whileHover={{ scale: 1.15, rotate: 8 }}
+                  transition={{ type: "spring", stiffness: 200 }}
+                  className="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-2xl   text-5xl ">
+                  <Icon />
+                </motion.div>
+
+                {/* Title */}
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  {service.title}
+                </h3>
+
+                {/* Divider */}
+                <div className="w-10 h-1 bg-black mx-auto mb-4 group-hover:w-16 transition-all duration-300"></div>
+
+                {/* Description */}
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {service.description}
+                </p>
               </motion.div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                {service.title}
-              </h3>
-              <p className="text-gray-600">{service.description}</p>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

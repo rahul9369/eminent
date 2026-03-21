@@ -2,42 +2,76 @@ import React from "react";
 
 const Industries = () => {
   const industries = [
-    "Government",
-    "Corporate",
-    "Hospitality",
-    "Home & Hi- Fi",
-    "Education",
-    "Events & Live shows",
+    {
+      name: "Government",
+      icon: "🏛️",
+    },
+    {
+      name: "Corporate",
+      icon: "🏢",
+    },
+    {
+      name: "Hospitality",
+      icon: "🏨",
+    },
+    {
+      name: "Home & Hi-Fi",
+      icon: "🏠",
+    },
+    {
+      name: "Education",
+      icon: "🎓",
+    },
+    {
+      name: "Events & Live Shows",
+      icon: "🎤",
+    },
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            SOUND ENGINEERING FOR IMMERSIVE WORLDS
+    <section className="py-20 bg-gradient-to-b from-gray-50 to-gray-100">
+      <div className="max-w-7xl mx-auto px-4">
+        {/* 🔥 Heading */}
+        <div className="text-center mb-20">
+          <h2 className="text-sm tracking-widest text-gray-500 uppercase mb-3">
+            Sound Engineering
           </h2>
-          <h3 className="text-3xl font-bold text-gray-900 mb-8">
-            INDUSTRIES WE SERVE
-          </h3>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            Empowering immersive experiences across diverse industries with
-            top-tier audiovisual solutions. From conference rooms to
-            auditoriums, classrooms to restaurants, events to home theatres,
-            Pink Noise Pro delivers unparalleled sound and visual excellence.
+
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+            Industries We Serve
+          </h1>
+
+          <p className="text-gray-600 mt-5 max-w-2xl mx-auto text-lg">
+            Delivering immersive audio-visual experiences across industries —
+            from corporate boardrooms to large-scale live events.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {industries.map((industry) => (
+        {/* 🔥 Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+          {industries.map((item, index) => (
             <div
-              key={industry}
-              className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                {industry}
+              key={index}
+              className="group relative bg-white/60 backdrop-blur-xl border border-gray-200 rounded-3xl p-8 text-center shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden">
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+
+              {/* Icon */}
+              <div className="text-5xl mb-6 transform group-hover:scale-110 transition duration-500">
+                {item.icon}
+              </div>
+
+              {/* Title */}
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                {item.name}
               </h3>
-              <button className="text-blue-600 hover:text-blue-700 font-medium">
-                Read More
+
+              {/* Divider */}
+              <div className="w-10 h-1 bg-black mx-auto mb-4 group-hover:w-16 transition-all duration-300"></div>
+
+              {/* CTA */}
+              <button className="text-sm font-medium text-gray-600 group-hover:text-black transition">
+                Read More →
               </button>
             </div>
           ))}
@@ -47,4 +81,4 @@ const Industries = () => {
   );
 };
 
-export default Industries; 
+export default Industries;

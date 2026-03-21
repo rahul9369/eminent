@@ -11,11 +11,13 @@ const AboutSection = () => {
             Who We Are
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed">
-            We are the professionals dedicated to promoting, marketing &
-            distributing the finest brands in the professional audio industry.
-            Our team delivers end-to-end solutions—from import logistics to
-            final setup—ensuring productivity, efficiency & sustainability in
-            all our projects.
+            We are a team of dedicated experts committed to driving forward,
+            promoting, and distributing some of the finest brands in the
+            professional audiovisual industry. Our team adopts an innovative
+            turn-key approach, offering comprehensive solutions that encompass
+            importing, coordinating goods, and overseeing the final execution
+            and commissioning. Each solution we create enhances productivity,
+            efficiency, and sustainability for both individuals and businesses.
           </p>
           <p className="text-md text-gray-600">
             With an ethical and transparent business approach, we’re redefining
