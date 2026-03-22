@@ -24,7 +24,7 @@ const brandProducts = {
 };
 const brandLinks = {
   amate: "https://www.amateaudio.com",
-  louismartin: "https://www.louismartin.com",
+  louismartin: "https://www.louismartinaudio.com/",
 };
 
 const BrandProducts = () => {
