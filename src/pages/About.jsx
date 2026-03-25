@@ -2,163 +2,153 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">About Us</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Leading the way in professional audio and video solutions across
-            India
-          </p>
-        </div>
+    <div className="bg-[#f8fafc] text-gray-800">
+      {/* Hero Section */}
+      <div className="py-20 text-center bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-white">
+        <h1 className="text-5xl md:text-6xl font-semibold mb-6 tracking-tight">
+          About Eminent AV
+        </h1>
+        <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+          Delivering premium audio & video experiences across India with
+          innovation and excellence.
+        </p>
+      </div>
 
-        {/* Company Story */}
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
+      <div className=" mx-auto px-6 lg:px-8 py-16">
+        {/* Story Section */}
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
-            <p className="text-gray-600 mb-4">
-              Founded with a vision to revolutionize the audio industry, Eminent
-              Audio & Video has been at the forefront of professional audio
-              solutions for over a decade. We started as a small team of
-              passionate audio engineers and have grown into one of India's most
-              trusted names in professional audio equipment.
+            <h2 className="text-3xl font-semibold mb-6 text-gray-900">
+              Our Story
+            </h2>
+            <p className="text-gray-600 mb-4 leading-relaxed">
+              Founded with a vision to redefine professional audio solutions,
+              Eminent Audio & Video has grown into a trusted industry leader.
+              From a small passionate team to a nationwide presence, our journey
+              reflects innovation, dedication, and excellence.
             </p>
-            <p className="text-gray-600 mb-4">
-              Our journey began with a simple mission: to provide the highest
-              quality audio equipment and exceptional service to our clients.
-              Today, we're proud to serve clients across various industries,
-              from government institutions to corporate offices, from
-              hospitality venues to educational institutions.
+            <p className="text-gray-600 mb-4 leading-relaxed">
+              We serve diverse industries including corporate, hospitality,
+              education, and government sectors with cutting-edge AV solutions.
             </p>
-            <p className="text-gray-600">
-              We believe in the power of sound to transform spaces and create
-              memorable experiences. Every project we undertake is approached
-              with the same level of dedication and attention to detail that we
-              had when we first started.
+            <p className="text-gray-600 leading-relaxed">
+              Every project we deliver is built on precision, creativity, and a
+              deep understanding of client needs.
             </p>
           </div>
-          <div className="bg-gradient-to-br from-blue-400 to-purple-500 h-96 rounded-lg flex items-center justify-center">
-            <div className="text-white text-6xl">🎵</div>
+
+          {/* Image Box */}
+          <div className="relative group">
+            <div className="h-96 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-6xl shadow-xl group-hover:scale-105 transition duration-500">
+              🎵
+            </div>
           </div>
         </div>
 
-        {/* Mission & Vision */}
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+        {/* Mission Vision */}
+        <div className="grid md:grid-cols-2 gap-10 mb-20">
+          <div className="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300">
+            <h3 className="text-xl font-semibold mb-4 text-gray-900">
               Our Mission
             </h3>
-            <p className="text-gray-600">
-              To provide innovative, high-quality audio and video solutions that
-              enhance the way people experience sound and visual content. We
-              strive to be the most trusted partner for professional audio
-              equipment and services in India.
+            <p className="text-gray-600 leading-relaxed">
+              To deliver high-quality, innovative AV solutions that enhance
+              communication, entertainment, and experiences.
             </p>
           </div>
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+
+          <div className="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300">
+            <h3 className="text-xl font-semibold mb-4 text-gray-900">
               Our Vision
             </h3>
-            <p className="text-gray-600">
-              To be the leading provider of professional audio and video
-              solutions, setting industry standards for quality, innovation, and
-              customer service while contributing to the growth of the
-              audio-visual industry in India.
+            <p className="text-gray-600 leading-relaxed">
+              To become India's most trusted AV solutions provider, setting new
+              benchmarks in quality, service, and innovation.
             </p>
           </div>
         </div>
 
         {/* Values */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            Our Values
+        <div className="mb-20">
+          <h2 className="text-3xl font-semibold text-center mb-12">
+            Our Core Values
           </h2>
+
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl">✓</span>
+            {[
+              {
+                icon: "✓",
+                title: "Quality",
+                desc: "Delivering excellence in every project.",
+              },
+              {
+                icon: "🤝",
+                title: "Integrity",
+                desc: "Honesty and transparency in all dealings.",
+              },
+              {
+                icon: "💡",
+                title: "Innovation",
+                desc: "Adopting cutting-edge technologies.",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="bg-white p-8 rounded-2xl text-center shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                  {item.icon}
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Quality</h3>
-              <p className="text-gray-600">
-                We never compromise on quality. Every product and service we
-                offer meets the highest industry standards.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl">🤝</span>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Integrity
-              </h3>
-              <p className="text-gray-600">
-                We conduct our business with honesty, transparency, and ethical
-                practices in all our dealings.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl">💡</span>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Innovation
-              </h3>
-              <p className="text-gray-600">
-                We continuously explore new technologies and solutions to
-                provide cutting-edge audio-visual experiences.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
 
         {/* Team */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            Our Team
+        <div className="mb-20">
+          <h2 className="text-3xl font-semibold text-center mb-12">
+            Meet Our Team
           </h2>
+
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { name: "XYZ", role: "CEO & Founder", avatar: "👨‍💼" },
-              { name: "XYZ", role: "Technical Director", avatar: "👩‍💻" },
-              { name: "XYZ", role: "Sales Manager", avatar: "👨‍💼" },
-              { name: "XYZ", role: "Customer Success", avatar: "👩‍💼" },
-            ].map((member, index) => (
-              <div key={index} className="text-center">
-                <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-4xl">{member.avatar}</span>
+              { name: "XYZ", role: "CEO & Founder" },
+              { name: "XYZ", role: "Technical Director" },
+              { name: "XYZ", role: "Sales Manager" },
+              { name: "XYZ", role: "Customer Success" },
+            ].map((member, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-xl transition">
+                <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl">
+                  👤
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-gray-600">{member.role}</p>
+                <h3 className="font-semibold text-gray-900">{member.name}</h3>
+                <p className="text-sm text-gray-500">{member.role}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Stats */}
-        <div className="bg-white p-8 rounded-lg shadow-lg">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl p-10 shadow-lg">
+          <h2 className="text-3xl font-semibold text-center mb-10">
             Our Achievements
           </h2>
+
           <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">500+</div>
-              <p className="text-gray-600">Projects Completed</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
-              <p className="text-gray-600">Brands Partnered</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">1000+</div>
-              <p className="text-gray-600">Happy Clients</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">10+</div>
-              <p className="text-gray-600">Years Experience</p>
-            </div>
+            {[
+              { value: "500+", label: "Projects Completed" },
+              { value: "50+", label: "Brands Partnered" },
+              { value: "1000+", label: "Happy Clients" },
+              { value: "10+", label: "Years Experience" },
+            ].map((item, i) => (
+              <div key={i}>
+                <div className="text-4xl font-bold mb-2">{item.value}</div>
+                <p className="text-gray-200 text-sm">{item.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

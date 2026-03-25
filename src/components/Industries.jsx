@@ -30,7 +30,7 @@ const Industries = () => {
 
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 to-gray-100">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className=" mx-auto px-4">
         {/* 🔥 Heading */}
         <div className="text-center mb-20">
           <h2 className="text-sm tracking-widest text-gray-500 uppercase mb-3">

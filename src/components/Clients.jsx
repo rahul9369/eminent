@@ -15,7 +15,7 @@ const Clients = () => {
 
   return (
     <section className="py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className=" mx-auto px-4">
         {/* 🔥 Heading */}
         <div className="text-center mb-16">
           <h2 className="text-sm uppercase tracking-widest text-gray-500 mb-3">
@@ -23,7 +23,7 @@ const Clients = () => {
           </h2>
 
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-            Our Clients
+            OUR CLIENTS
           </h1>
 
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">

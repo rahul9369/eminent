@@ -21,8 +21,8 @@ const Header = () => {
               to="/"
               className="text-3xl font-bold text-gray-800 hover:text-blue-600 transition-colors">
               Eminent
-              <br />
-              <p className="text-[18px] font-semibold"> Audio & Video</p>
+              {/* <br />
+              <p className="text-[18px] font-semibold"> Audio & Video</p> */}
             </Link>
           </div>
 
@@ -37,11 +37,36 @@ const Header = () => {
             {/* </div> */}
 
             {/* <div className="relative group"> */}
-            <Link
+            {/* <Link
               to="/brands"
               className="text-gray-700 cursor-pointer hover:text-blue-600 px-3 py-2 text-sm font-medium">
               BRANDS
-            </Link>
+            </Link> */}
+            <div className="relative group">
+              <button className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                BRANDS
+              </button>
+
+              {/* Dropdown */}
+              <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300 z-50">
+                <ul className="py-2">
+                  <li>
+                    <Link
+                      to="/brands/amate"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">
+                      Amate
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/brands/louismartin"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">
+                      LouisMartin
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
             {/* </div> */}
 
             <Link
@@ -102,11 +127,23 @@ const Header = () => {
                 className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600">
                 About us
               </button>
-              <button
-                onClick={() => handleNavigation("/brands")}
-                className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600">
-                Brands
-              </button>
+              <div>
+                <p className="px-3 py-2 text-base font-semibold text-gray-800">
+                  Brands
+                </p>
+
+                <button
+                  onClick={() => handleNavigation("/brands/amate")}
+                  className="block w-full text-left pl-6 px-3 py-2 text-sm text-gray-600 hover:text-blue-600">
+                  Amate
+                </button>
+
+                <button
+                  onClick={() => handleNavigation("/brands/louismartin")}
+                  className="block w-full text-left pl-6 px-3 py-2 text-sm text-gray-600 hover:text-blue-600">
+                  LouisMartin
+                </button>
+              </div>
               <button
                 onClick={() => handleNavigation("/solutions")}
                 className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600">

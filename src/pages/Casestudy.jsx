@@ -32,14 +32,14 @@ const CaseStudy = () => {
     <div className="min-h-screen bg-gray-100 py-12 px-4">
       {/* Heading */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold">Case Studies</h1>
+        <h1 className="text-4xl font-bold">CASE STUDIES</h1>
         <p className="text-gray-600 mt-3">
           Real-world projects showcasing our expertise and performance
         </p>
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10  mx-auto">
         {caseStudies.map((item, index) => (
           <Link
             to={`/case-study/${item.id}`}

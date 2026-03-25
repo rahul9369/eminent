@@ -51,7 +51,7 @@ const Services = () => {
 
   return (
     <section className="py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className=" mx-auto px-4">
         {/* 🔥 Heading */}
         <div className="text-center mb-16">
           <h2 className="text-sm uppercase tracking-widest text-gray-500 mb-3">

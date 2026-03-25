@@ -11,7 +11,7 @@ const Products = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16  bg-gray-50">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-16">
@@ -22,7 +22,7 @@ const Products = () => {
         </div>
 
         {/* Product Cards */}
-        <div className="grid md:grid-cols-1 h-full gap-8">
+        <div className="grid md:grid-cols-1  gap-8">
           {products.map((product, index) => (
             <div
               key={index}
@@ -31,7 +31,7 @@ const Products = () => {
               <img
                 src={product.image}
                 alt={product.title}
-                className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full  object-cover transition-transform duration-500 group-hover:scale-110"
               />
 
               {/* Overlay */}

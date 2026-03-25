@@ -33,7 +33,7 @@ const Solutions = () => {
       {/* Heading */}
       <div className="text-center mb-14">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-          Our Solutions
+          OUR SOLUTIONS
         </h1>
         <p className="text-gray-600 mt-4 max-w-xl mx-auto">
           Explore our professional audio solutions designed for every
@@ -42,7 +42,7 @@ const Solutions = () => {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10  mx-auto">
         {solutions.map((item) => (
           <Link
             to={`/solutions/${item.id}`}

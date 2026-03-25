@@ -23,8 +23,8 @@ const Blogs = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="py-5 bg-gradient-to-b from-gray-50 to-white">
+      <div className=" mx-auto px-4">
         {/* 🔥 Heading */}
         <div className="text-center mb-16">
           <h2 className="text-sm uppercase tracking-widest text-gray-500 mb-3">

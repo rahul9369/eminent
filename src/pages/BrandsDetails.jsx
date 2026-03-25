@@ -1,27 +1,44 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import linearray from "../assets/famouf.JPG";
+import pointsource from "../assets/redfront.JPG";
+import column from "../assets/kff302.jpg";
+import commercial from "../assets/dsf15.JPG";
+import subwoofer from "../assets/ksf218.JPG";
+import electronics from "../assets/plf4.jpg";
 
 const brandProducts = {
   amate: [
     {
-      name: "Amate Speaker X1",
+      name: "Xcellence Series",
       img: "https://images.unsplash.com/photo-1589003077984-894e133dabab",
     },
     {
-      name: "Amate Line Array",
+      name: "Nitid",
       img: "https://images.unsplash.com/photo-1511379938547-c1f69419868d",
+    },
+    {
+      name: "Electronics",
+      img: "https://images.unsplash.com/photo-1589003077984-894e133dabab",
+    },
+    {
+      name: "Ease Focus",
+      img: "https://images.unsplash.com/photo-1511379938547-c1f69419868d",
+    },
+    {
+      name: "DSP4 Software",
+      img: "https://images.unsplash.com/photo-1589003077984-894e133dabab",
     },
   ],
   louismartin: [
-    {
-      name: "LouisMartin Bass Pro",
-      img: "https://images.unsplash.com/photo-1545454675-3531b543be5d",
-    },
-    {
-      name: "LouisMartin Tower",
-      img: "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
-    },
+    { name: "Line Array", img: linearray },
+    { name: "Point Source", img: pointsource },
+    { name: "Column Speaker", img: column },
+    { name: "Commercial Speaker", img: commercial },
+    { name: "Subwoofer", img: subwoofer },
+    { name: "Electronics", img: electronics },
   ],
 };
+
 const brandLinks = {
   amate: "https://www.amateaudio.com",
   louismartin: "https://www.louismartinaudio.com/",
@@ -29,7 +46,6 @@ const brandLinks = {
 
 const BrandProducts = () => {
   const { id } = useParams();
-
   const products = brandProducts[id];
 
   if (!products) {
@@ -37,59 +53,71 @@ const BrandProducts = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-4">
-      {/* Heading */}
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-10 capitalize">
-        {id} Products
-      </h1>
+    <div className="min-h-screen bg-[#f8fafc] py-16 px-4">
+      {/* 🔥 Header */}
+      <div className="text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 capitalize tracking-tight">
+          {id} Products
+        </h1>
+        <p className="text-gray-500 mt-3 text-sm md:text-base">
+          Explore premium audio solutions crafted for performance & reliability
+        </p>
+      </div>
 
-      {/* Product Grid */}
-      <div className="flex flex-col gap-10  mx-auto px-4">
+      {/* 🔥 Product Cards */}
+      <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         {products.map((item, index) => (
           <div
             key={index}
-            className={`group flex flex-col md:flex-row ${
-              index % 2 !== 0 ? "md:flex-row-reverse" : ""
-            } bg-white/70 backdrop-blur-lg border border-gray-200 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500`}>
-            {/* 🔥 Image Section */}
-            <div className="md:w-[65%] w-full h-64 md:h-80   overflow-hidden relative">
+            className="group relative items-center bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 p-6 flex flex-col">
+            {/* 🔥 Image */}
+            <div className="h-56 flex items-center justify-center mb-6">
               <img
                 src={item.img}
                 alt={item.name}
-                className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700 ease-in-out"
+                className="max-h-full object-contain transition duration-500 group-hover:scale-105"
               />
-
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition duration-500"></div>
             </div>
 
-            {/* 🔥 Content Section */}
-            <div className="md:w-[35%] w-full flex flex-col justify-center p-6 md:p-8">
-              <h2 className="text-2xl font-semibold text-gray-800 group-hover:text-black transition">
-                {item.name}
-              </h2>
+            {/* 🔥 Content */}
+            <h2 className="text-xl text-center font-semibold text-gray-900">
+              {item.name}
+            </h2>
 
-              <p className="text-gray-500 mt-3 text-sm leading-relaxed">
-                High-performance audio solution designed for clarity, power, and
-                durability. Perfect for professional sound setups.
-              </p>
+            <p className="text-gray-500 text-center mt-3 text-sm leading-relaxed">
+              Engineered for superior sound clarity and unmatched performance.
+            </p>
 
-              {/* Button */}
-              <button className="mt-6 w-fit px-5 py-2.5 rounded-xl bg-black text-white text-sm font-medium tracking-wide hover:bg-gray-800 transition-all duration-300 group-hover:scale-105">
-                View Details →
-              </button>
-            </div>
+            {/* Features */}
+            {/* <div className="mt-4 space-y-1 text-xs text-gray-600">
+              <p>✔ High Output</p>
+              <p>✔ Premium Quality</p>
+              <p>✔ Pro Sound</p>
+            </div> */}
+
+            {/* Button */}
+            <button className="mt-6 w-fit px-5 text-center py-2 rounded-lg bg-black text-white text-sm hover:bg-gray-800 transition">
+              Explore →
+            </button>
+
+            {/* Glow effect */}
+            <div className="absolute -z-10 w-40 h-40 bg-blue-100 rounded-full blur-2xl opacity-30 top-5 right-5"></div>
           </div>
         ))}
       </div>
-      {/* 🔥 Visit Site Button */}
-      <div className="text-center mt-14">
+
+      {/* 🔥 CTA Section */}
+      <div className="text-center mt-20">
+        <h3 className="text-xl font-semibold text-gray-900 mb-4">
+          Want to explore more from this brand?
+        </h3>
+
         <a
           href={brandLinks[id]}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-8 py-3 rounded-2xl bg-black text-white text-sm font-medium tracking-wide shadow-lg hover:bg-gray-800 hover:scale-105 transition-all duration-300">
-          Visit Official Site →
+          className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-black to-gray-800 text-white text-sm font-medium shadow-md hover:scale-105 transition-all duration-300">
+          Visit Official Website →
         </a>
       </div>
     </div>
