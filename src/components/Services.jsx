@@ -24,16 +24,16 @@ const Services = () => {
       icon: FaComments,
     },
     {
+      title: "Design",
+      description:
+        "Creative and technical system design tailored for premium sound experiences.",
+      icon: FaPencilRuler,
+    },
+    {
       title: "Integration",
       description:
         "Seamless integration of advanced systems to create powerful and scalable solutions.",
       icon: FaProjectDiagram,
-    },
-    {
-      title: "Support",
-      description:
-        "Reliable support services ensuring smooth performance and long-term system stability.",
-      icon: FaHeadset,
     },
     {
       title: "Training",
@@ -42,10 +42,10 @@ const Services = () => {
       icon: FaChalkboardTeacher,
     },
     {
-      title: "Design",
+      title: "Support",
       description:
-        "Creative and technical system design tailored for premium sound experiences.",
-      icon: FaPencilRuler,
+        "Reliable support services ensuring smooth performance and long-term system stability.",
+      icon: FaHeadset,
     },
   ];
 
@@ -58,7 +58,7 @@ const Services = () => {
             Services
           </h2>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-            What We Do
+            WHAT WE DO
           </h1>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
             Delivering innovative and reliable audio solutions with expertise,

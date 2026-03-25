@@ -4,20 +4,21 @@ import { Link } from "react-router-dom";
 const AboutSection = () => {
   return (
     <section className="w-full py-20 bg-gray-100">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-1 gap-12 items-center px-6 lg:px-8">
         {/* Left: Text Content */}
         <div className="space-y-6">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-            Who We Are
+            WHO WE ARE
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed">
-            We are a team of dedicated experts committed to driving forward,
-            promoting, and distributing some of the finest brands in the
-            professional audiovisual industry. Our team adopts an innovative
-            turn-key approach, offering comprehensive solutions that encompass
-            importing, coordinating goods, and overseeing the final execution
-            and commissioning. Each solution we create enhances productivity,
-            efficiency, and sustainability for both individuals and businesses.
+            We are a team of dedicated experts passionate about advancing,
+            promoting, and distributing some of the world’s finest brands in the
+            professional audiovisual industry. With an innovative turnkey
+            approach, we deliver end-to-end solutions that cover importing,
+            logistics coordination, and complete execution through to
+            commissioning. Every solution we design is crafted to enhance
+            productivity, efficiency, and sustainability—empowering both
+            individuals and businesses to thrive.
           </p>
           <p className="text-md text-gray-600">
             With an ethical and transparent business approach, we’re redefining

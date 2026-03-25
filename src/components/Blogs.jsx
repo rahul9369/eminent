@@ -32,7 +32,7 @@ const Blogs = () => {
           </h2>
 
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-            Latest Blogs
+            LATEST NEWS
           </h1>
 
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">

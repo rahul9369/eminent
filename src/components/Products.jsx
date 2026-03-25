@@ -3,19 +3,7 @@ import React from "react";
 const Products = () => {
   const products = [
     {
-      title: "Home Theatre & Hi-fi",
-      description: "Make your Cinematic experience Legendary",
-      image:
-        "https://images.unsplash.com/photo-1565986829539-cb936ef8805f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZGolMjBpbWd8ZW58MHx8MHx8fDA%3D",
-    },
-    {
-      title: "Music & Recording",
-      description: "Most Popular gears for your Music Studio",
-      image:
-        "https://images.unsplash.com/photo-1565986829539-cb936ef8805f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZGolMjBpbWd8ZW58MHx8MHx8fDA%3D",
-    },
-    {
-      title: "Pro Audio & Visual",
+      title: "Pro Audio & Video",
       description: "Commercial AV solutions simplified",
       image:
         "https://images.unsplash.com/photo-1565986829539-cb936ef8805f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZGolMjBpbWd8ZW58MHx8MHx8fDA%3D",
@@ -24,7 +12,7 @@ const Products = () => {
 
   return (
     <section className="py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -34,7 +22,7 @@ const Products = () => {
         </div>
 
         {/* Product Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-1 h-full gap-8">
           {products.map((product, index) => (
             <div
               key={index}

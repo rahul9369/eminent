@@ -38,12 +38,15 @@ const Industries = () => {
           </h2>
 
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-            Industries We Serve
+            SECTORS WE SERVE
           </h1>
 
-          <p className="text-gray-600 mt-5 max-w-2xl mx-auto text-lg">
-            Delivering immersive audio-visual experiences across industries —
-            from corporate boardrooms to large-scale live events.
+          <p className="text-gray-600 mt-5 mx-auto text-lg">
+            Empowering immersive experiences across industries with world-class
+            audiovisual solutions. From conference rooms to auditoriums,
+            classrooms to restaurants, live events to home theatres, Eminent
+            Audio Visual delivers unmatched sound and visual
+            excellence—transforming every space into an inspiring environment.
           </p>
         </div>
 

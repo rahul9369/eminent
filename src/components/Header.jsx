@@ -32,7 +32,7 @@ const Header = () => {
             <Link
               to="/about"
               className="text-gray-700 cursor-pointer hover:text-blue-600 px-3 py-2 text-sm font-medium">
-              About us
+              ABOUT US
             </Link>
             {/* </div> */}
 
@@ -40,21 +40,21 @@ const Header = () => {
             <Link
               to="/brands"
               className="text-gray-700 cursor-pointer hover:text-blue-600 px-3 py-2 text-sm font-medium">
-              Brands
+              BRANDS
             </Link>
             {/* </div> */}
 
             <Link
               to="/solutions"
               className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">
-              Solutions
+              SOLUTIONS
             </Link>
 
             {/* <div className="relative group"> */}
             <Link
               to="/casestudy"
               className="text-gray-700 cursor-pointer hover:text-blue-600 px-3 py-2 text-sm font-medium">
-              Case Study
+              CASE STUDY
             </Link>
 
             {/* </div> */}
@@ -62,7 +62,7 @@ const Header = () => {
             <Link
               to="/contact"
               className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">
-              Contact us
+              CONTACT US
             </Link>
           </nav>
 
