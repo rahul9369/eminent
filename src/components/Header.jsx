@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Logo from "../assets/Logo.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,12 +18,12 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <Link
-              to="/"
-              className="text-3xl font-bold text-gray-800 hover:text-blue-600 transition-colors">
-              Eminent
-              {/* <br />
-              <p className="text-[18px] font-semibold"> Audio & Video</p> */}
+            <Link to="/" className="flex items-center">
+              <img
+                src={Logo}
+                alt="Eminent Logo"
+                className="h-10 w-auto object-contain"
+              />
             </Link>
           </div>
 

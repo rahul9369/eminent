@@ -32,7 +32,7 @@ const AboutSection = () => {
             how audio systems are designed and delivered across industries.
           </p>
           <Link to="/about">
-            <button className="mt-4 inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-medium transition duration-300 shadow-md">
+            <button className="mt-4 inline-block bg-gradient-to-r from-[#4FA3D1] to-[#2F6FA3] hover:bg-[#4FA3D5] text-white px-8 py-3 rounded-lg text-lg font-medium transition duration-300 shadow-md">
               Read More
             </button>
           </Link>

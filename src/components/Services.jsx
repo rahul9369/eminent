@@ -80,14 +80,15 @@ const Services = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group relative bg-white/70 backdrop-blur-xl border border-gray-200 rounded-3xl p-8 text-center shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden">
                 {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-100/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
-                {/* 🔥 Icon Circle */}
+                {/* 🔥 Icon Circle (UPDATED) */}
                 <motion.div
                   whileHover={{ scale: 1.15, rotate: 8 }}
                   transition={{ type: "spring", stiffness: 200 }}
-                  className="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-2xl   text-5xl ">
-                  <Icon />
+                  className="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-2xl 
+          bg-gradient-to-r from-[#4FA3D1] to-[#2F6FA3] shadow-lg group-hover:shadow-xl transition">
+                  <Icon className="text-white text-3xl" />
                 </motion.div>
 
                 {/* Title */}
@@ -96,7 +97,7 @@ const Services = () => {
                 </h3>
 
                 {/* Divider */}
-                <div className="w-10 h-1 bg-black mx-auto mb-4 group-hover:w-16 transition-all duration-300"></div>
+                <div className="w-10 h-1 bg-gradient-to-r from-[#4FA3D1] to-[#2F6FA3] mx-auto mb-4 group-hover:w-16 transition-all duration-300"></div>
 
                 {/* Description */}
                 <p className="text-gray-600 text-sm leading-relaxed">

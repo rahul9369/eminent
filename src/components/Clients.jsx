@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Clients = () => {
   const clients = [
@@ -33,17 +34,26 @@ const Clients = () => {
         </div>
 
         {/* 🔥 Logo Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-10 items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-10 items-center">
           {clients.map((logo, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group flex items-center justify-center p-4 rounded-xl bg-white shadow-sm hover:shadow-xl transition-all duration-500">
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              className="group flex items-center justify-center p-5 rounded-2xl 
+              bg-white border border-gray-100 shadow-sm hover:shadow-xl 
+              transition-all duration-500">
               <img
                 src={logo}
-                alt="client"
-                className="max-h-12 object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition duration-500"
+                alt="client logo"
+                className="max-h-10 md:max-h-12 object-contain 
+  opacity-90 
+  group-hover:scale-110 
+  transition duration-500"
               />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

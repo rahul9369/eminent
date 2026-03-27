@@ -75,7 +75,7 @@ const Blogs = () => {
 
         {/* 🔥 View All Button */}
         <div className="text-center mt-14">
-          <button className="px-8 py-3 rounded-2xl bg-black text-white text-sm font-medium tracking-wide shadow-lg hover:bg-gray-800 hover:scale-105 transition-all duration-300">
+          <button className="px-8 py-3 rounded-2xl   bg-gradient-to-r from-[#4FA3D1] to-[#2F6FA3] text-white text-sm font-medium tracking-wide shadow-lg hover:bg-gray-800 hover:scale-105 transition-all duration-300">
             View All Blogs →
           </button>
         </div>
