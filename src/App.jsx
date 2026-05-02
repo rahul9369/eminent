@@ -13,7 +13,7 @@ import Solution from "./pages/Solution";
 import SolutionDetails from "./pages/Solutiondetails";
 import CaseStudyDetails from "./pages/CaseStudydetails";
 import BrandProducts from "./pages/BrandsDetails";
-import Government from "./pages/Government";
+
 function App() {
   return (
     <div className="min-h-screen bg-white">

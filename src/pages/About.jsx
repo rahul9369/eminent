@@ -18,7 +18,7 @@ const About = () => {
         {/* Story Section */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div>
-            <h2 className="text-3xl font-semibold mb-6 text-gray-900">
+            <h2 className="text-3xl font-semibold mb-6 text-[#3b82b4]">
               Our Story
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
@@ -48,7 +48,7 @@ const About = () => {
         {/* Mission Vision */}
         <div className="grid md:grid-cols-2 gap-10 mb-20">
           <div className="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300">
-            <h3 className="text-xl font-semibold mb-4 text-gray-900">
+            <h3 className="text-xl font-semibold mb-4 text-[#3b82b4]">
               Our Mission
             </h3>
             <p className="text-gray-600 leading-relaxed">
@@ -58,7 +58,7 @@ const About = () => {
           </div>
 
           <div className="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300">
-            <h3 className="text-xl font-semibold mb-4 text-gray-900">
+            <h3 className="text-xl font-semibold mb-4 text-[#3b82b4]">
               Our Vision
             </h3>
             <p className="text-gray-600 leading-relaxed">
@@ -132,7 +132,7 @@ const About = () => {
         </div>
 
         {/* Stats */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl p-10 shadow-lg">
+        <div className="bg-gradient-to-r from-[#3b82b4] to-indigo-500 text-white rounded-2xl p-10 shadow-lg">
           <h2 className="text-3xl font-semibold text-center mb-10">
             Our Achievements
           </h2>

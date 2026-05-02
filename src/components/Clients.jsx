@@ -23,7 +23,7 @@ const Clients = () => {
             Trusted By
           </h2>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#3b82b4]">
             OUR CLIENTS
           </h1>
 

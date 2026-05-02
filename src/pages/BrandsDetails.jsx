@@ -5,28 +5,32 @@ import column from "../assets/kff302.jpg";
 import commercial from "../assets/dsf15.JPG";
 import subwoofer from "../assets/ksf218.JPG";
 import electronics from "../assets/plf4.jpg";
+import xcellence from "../assets/brand/xcellence.jpg";
+import nitid1 from "../assets/brand/nitid1.jpg";
+import elctronic from "../assets/brand/electronic.jpg";
+import dsp4 from "../assets/brand/dsp4.jpg";
 
 const brandProducts = {
   amate: [
     {
       name: "Xcellence Series",
-      img: "https://images.unsplash.com/photo-1589003077984-894e133dabab",
+      img: xcellence,
     },
     {
-      name: "Nitid",
-      img: "https://images.unsplash.com/photo-1511379938547-c1f69419868d",
+      name: "Nítid-S Series",
+      img: nitid1,
     },
     {
       name: "Electronics",
-      img: "https://images.unsplash.com/photo-1589003077984-894e133dabab",
+      img: elctronic,
     },
-    {
-      name: "Ease Focus",
-      img: "https://images.unsplash.com/photo-1511379938547-c1f69419868d",
-    },
+    // {
+    //   name: "Ease Focus",
+    //   img: "https://images.unsplash.com/photo-1511379938547-c1f69419868d",
+    // },
     {
       name: "DSP4 Software",
-      img: "https://images.unsplash.com/photo-1589003077984-894e133dabab",
+      img: dsp4,
     },
   ],
   louismartin: [
@@ -56,7 +60,7 @@ const BrandProducts = () => {
     <div className="min-h-screen bg-[#f8fafc] py-16 px-4">
       {/* 🔥 Header */}
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 capitalize tracking-tight">
+        <h1 className="text-4xl md:text-5xl font-semibold text-[#3b82b4] capitalize tracking-tight">
           {id} Products
         </h1>
         <p className="text-gray-500 mt-3 text-sm md:text-base">
@@ -85,8 +89,9 @@ const BrandProducts = () => {
             </h2>
 
             <p className="text-gray-500 text-center mt-3 text-sm leading-relaxed">
-              Engineered for superior sound clarity and unmatched performance.
+             Xcellence represents our commitment to crafting premium audio solutions that deliver exceptional sound quality. It reflects our passion for innovation and our dedication to achieving perfection in every detail.
             </p>
+            
 
             {/* Features */}
             {/* <div className="mt-4 space-y-1 text-xs text-gray-600">
