@@ -15,22 +15,20 @@ const Header = () => {
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-
           {/* Logo */}
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="flex items-center ml-4 md:ml-6" // ✅ CHANGED (logo shift right)
           >
-            <img 
-              src={Logo} 
-              alt="Eminent Logo" 
-             className="h-12 md:h-16 w-auto object-contain object-left" // ✅ CHANGED (better size)
+            <img
+              src={Logo}
+              alt="Eminent Logo"
+              className="h-12 md:h-16 w-auto object-contain object-left" // ✅ CHANGED (better size)
             />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-
             <Link
               to="/about"
               className="text-gray-700 hover:text-blue-600 text-sm font-semibold transition text-center">
@@ -63,12 +61,41 @@ const Header = () => {
               </div>
             </div>
 
-            <Link
+            {/* <Link
               to="/solutions"
               className="text-gray-700 hover:text-blue-600 text-sm font-semibold transition text-center">
               SOLUTIONS
-            </Link>
+            </Link> */}
+            {/* Solutions Dropdown */}
+            <div className="relative group">
+              <button className="text-gray-700 hover:text-blue-600 text-sm font-semibold transition text-center">
+                SOLUTIONS
+              </button>
 
+              <div className="absolute left-1/2 -translate-x-1/2 mt-3 w-64 bg-white shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <ul className="py-2 text-center">
+                  {[
+                    "auditoriums",
+                    "conference-room",
+                    "gym-fitness",
+                    "home-hifi",
+                    "live-events",
+                    "night-clubs",
+                    "restaurants-cafes",
+                    "retail-outlet",
+                    "smart-classroom",
+                  ].map((item) => (
+                    <li key={item}>
+                      <Link
+                        to={`/solutions/${item}`}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">
+                        {item.replace("-", " ").toUpperCase()}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
             <Link
               to="/casestudy"
               className="text-gray-700 hover:text-blue-600 text-sm font-semibold transition text-center">
@@ -92,8 +119,17 @@ const Header = () => {
           {/* Mobile Button */}
           <div className="md:hidden">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              <svg className="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg
+                className="h-6 w-6 text-gray-700"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             </button>
           </div>
@@ -102,16 +138,44 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden bg-white shadow-lg rounded-xl p-4 space-y-2 text-center">
-            <button onClick={() => handleNavigation("/")} className="block w-full">Home</button>
-            <button onClick={() => handleNavigation("/about")} className="block w-full">About</button>
+            <button
+              onClick={() => handleNavigation("/")}
+              className="block w-full">
+              Home
+            </button>
+            <button
+              onClick={() => handleNavigation("/about")}
+              className="block w-full">
+              About
+            </button>
 
             <p className="font-semibold">Brands</p>
-            <button onClick={() => handleNavigation("/brands/amate")} className="block w-full">Amate</button>
-            <button onClick={() => handleNavigation("/brands/louismartin")} className="block w-full">LouisMartin</button>
+            <button
+              onClick={() => handleNavigation("/brands/amate")}
+              className="block w-full">
+              Amate
+            </button>
+            <button
+              onClick={() => handleNavigation("/brands/louismartin")}
+              className="block w-full">
+              LouisMartin
+            </button>
 
-            <button onClick={() => handleNavigation("/solutions")} className="block w-full">Solutions</button>
-            <button onClick={() => handleNavigation("/casestudy")} className="block w-full">Case Study</button>
-            <button onClick={() => handleNavigation("/contact")} className="block w-full">Contact</button>
+            <button
+              onClick={() => handleNavigation("/solutions")}
+              className="block w-full">
+              Solutions
+            </button>
+            <button
+              onClick={() => handleNavigation("/casestudy")}
+              className="block w-full">
+              Case Study
+            </button>
+            <button
+              onClick={() => handleNavigation("/contact")}
+              className="block w-full">
+              Contact
+            </button>
           </div>
         )}
       </div>
