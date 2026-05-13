@@ -1,183 +1,503 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import {
+  FaChevronDown,
+  FaBars,
+  FaTimes,
+  FaArrowRight,
+} from "react-icons/fa";
+
 import Logo from "../assets/logo.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // desktop dropdown
+  const [openDesktopBrands, setOpenDesktopBrands] = useState(false);
+  const [openDesktopSolutions, setOpenDesktopSolutions] = useState(false);
+
+  // mobile dropdown
+  const [openBrands, setOpenBrands] = useState(false);
+  const [openSolutions, setOpenSolutions] = useState(false);
+
   const navigate = useNavigate();
 
+  // ================= NAVIGATION =================
   const handleNavigation = (path) => {
     navigate(path);
+
+    // close all dropdowns
     setIsMenuOpen(false);
+    setOpenBrands(false);
+    setOpenSolutions(false);
+    setOpenDesktopBrands(false);
+    setOpenDesktopSolutions(false);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
+  // ================= BRANDS =================
+  const brands = [
+    {
+      name: "Amate Audio",
+      link: "/brands/amate",
+      image:
+        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
+    },
+    {
+      name: "LouisMartin",
+      link: "/brands/louismartin",
+      image:
+        "https://images.unsplash.com/photo-1516280440614-37939bbacd81",
+    },
+  ];
+
+  // ================= SOLUTIONS =================
+  const solutions = [
+    {
+      name: "Auditoriums",
+      image:
+        "https://images.unsplash.com/photo-1505373877841-8d25f7d46678",
+    },
+    {
+      name: "Live-events",
+      image:
+        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
+    },
+    {
+      name: "Night-clubs",
+      image:
+        "https://images.unsplash.com/photo-1514525253161-7a46d19cd819",
+    },
+    {
+      name: "Restaurants-cafes",
+      image:
+        "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
+    },
+    {
+      name: "Gym-fitness",
+      image:
+        "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
+    },
+    {
+      name: "Recording-studios",
+      image:
+        "https://images.unsplash.com/photo-1511379938547-c1f69419868d",
+    },
+    {
+      name: "Retail-outlet",
+      image:
+        "https://images.unsplash.com/photo-1441986300917-64674bd600d8",
+    },
+    {
+      name: "Home-hifi",
+      image:
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+    },
+    
+  ];
+
+
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header
+      className="
+        sticky top-0 z-50
+        bg-white
+        border-b border-blue-100
+        shadow-[0_8px_30px_rgba(0,0,0,0.05)]
+      "
+    >
+      {/* TOP LINE */}
+      <div className="h-[3px] w-full bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-black"></div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
+        <div className="flex items-center justify-between h-[82px]">
+
+          {/* LOGO */}
           <Link
             to="/"
-            className="flex items-center ml-4 md:ml-6" // ✅ CHANGED (logo shift right)
+            onClick={() => handleNavigation("/")}
+            className="flex items-center"
           >
             <img
               src={Logo}
-              alt="Eminent Logo"
-              className="h-12 md:h-16 w-auto object-contain object-left" // ✅ CHANGED (better size)
+              alt="Logo"
+              className="
+                h-12 md:h-14 w-auto object-contain
+                transition duration-300 hover:scale-105
+              "
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link
-              to="/about"
-              className="text-gray-700 hover:text-blue-600 text-sm font-semibold transition text-center">
+          {/* ================= DESKTOP MENU ================= */}
+          <nav className="hidden lg:flex items-center gap-6">
+
+            {/* ABOUT */}
+            <button
+              onClick={() => handleNavigation("/about")}
+              className="
+                text-[13px] font-semibold text-gray-700
+                hover:text-blue-600 transition duration-300
+              "
+            >
               ABOUT US
-            </Link>
+            </button>
 
-            {/* Dropdown */}
-            <div className="relative group">
-              <button className="text-gray-700 hover:text-blue-600 text-sm font-semibold transition text-center">
+            {/* ================= BRANDS ================= */}
+            <div className="relative">
+
+              <button
+                onClick={() => {
+                  setOpenDesktopBrands(!openDesktopBrands);
+                  setOpenDesktopSolutions(false);
+                }}
+                className="
+                  flex items-center gap-2
+                  text-[13px] font-semibold text-gray-700
+                  hover:text-blue-600 transition duration-300
+                "
+              >
                 BRANDS
+
+                <FaChevronDown
+                  className={`text-[10px] transition duration-300 ${
+                    openDesktopBrands ? "rotate-180" : ""
+                  }`}
+                />
               </button>
 
-              <div className="absolute left-1/2 -translate-x-1/2 mt-3 w-52 bg-white shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <ul className="py-2 text-center">
-                  <li>
-                    <Link
-                      to="/brands/amate"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">
-                      Amate
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/brands/louismartin"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">
-                      LouisMartin
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+              {openDesktopBrands && (
+                <div
+                  className="
+                    absolute top-[45px] left-1/2 -translate-x-1/2
+                    w-[430px]
+                    rounded-3xl
+                    bg-gradient-to-br from-[#07152D] via-[#0B1F40] to-black
+                    border border-blue-500/20
+                    shadow-[0_20px_60px_rgba(0,0,0,0.45)]
+                    backdrop-blur-xl
+                    p-5 z-50
+                  "
+                >
+                  <div className="grid grid-cols-2 gap-4">
+
+                    {brands.map((item, i) => (
+                      <button
+                        key={i}
+                        onClick={() => handleNavigation(item.link)}
+                        className="
+                          bg-white/5
+                          border border-white/10
+                          rounded-2xl overflow-hidden
+                          hover:border-blue-400/40
+                          hover:-translate-y-1
+                          transition-all duration-300
+                        "
+                      >
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="h-24 w-full object-cover"
+                        />
+
+                        <div className="p-3">
+                          <h3 className="text-sm font-semibold text-white">
+                            {item.name}
+                          </h3>
+                        </div>
+                      </button>
+                    ))}
+
+                  </div>
+                </div>
+              )}
             </div>
 
-            {/* <Link
-              to="/solutions"
-              className="text-gray-700 hover:text-blue-600 text-sm font-semibold transition text-center">
-              SOLUTIONS
-            </Link> */}
-            {/* Solutions Dropdown */}
-            <div className="relative group">
-              <button className="text-gray-700 hover:text-blue-600 text-sm font-semibold transition text-center">
+            {/* ================= SOLUTIONS ================= */}
+            <div className="relative">
+
+              <button
+                onClick={() => {
+                  setOpenDesktopSolutions(!openDesktopSolutions);
+                  setOpenDesktopBrands(false);
+                }}
+                className="
+                  flex items-center gap-2
+                  text-[13px] font-semibold text-gray-700
+                  hover:text-blue-600 transition duration-300
+                "
+              >
                 SOLUTIONS
+
+                <FaChevronDown
+                  className={`text-[10px] transition duration-300 ${
+                    openDesktopSolutions ? "rotate-180" : ""
+                  }`}
+                />
               </button>
 
-              <div className="absolute left-1/2 -translate-x-1/2 mt-3 w-64 bg-white shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <ul className="py-2 text-center">
-                  {[
-                    "auditoriums",
-                    "conference-room",
-                    "gym-fitness",
-                    "home-hifi",
-                    "live-events",
-                    "night-clubs",
-                    "restaurants-cafes",
-                    "retail-outlet",
-                    "smart-classroom",
-                  ].map((item) => (
-                    <li key={item}>
-                      <Link
-                        to={`/solutions/${item}`}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">
-                        {item.replace("-", " ").toUpperCase()}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {openDesktopSolutions && (
+                <div
+                  className="
+                    absolute top-[45px] left-1/2 -translate-x-1/2
+                    w-[780px]
+                    rounded-3xl
+                    bg-gradient-to-br from-[#07152D] via-[#0B1F40] to-black
+                    border border-blue-500/20
+                    shadow-[0_20px_60px_rgba(0,0,0,0.45)]
+                    backdrop-blur-xl
+                    p-5 z-50
+                  "
+                >
+                  <div className="grid grid-cols-4 gap-4">
+
+                    {solutions.map((item, i) => (
+                      <button
+                        key={i}
+                        onClick={() =>
+                          handleNavigation(`/solutions/${item.name}`)
+                        }
+                        className="
+                          bg-white/5
+                          border border-white/10
+                          rounded-2xl overflow-hidden
+                          hover:border-blue-400/40
+                          hover:-translate-y-1
+                          transition-all duration-300
+                        "
+                      >
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="h-20 w-full object-cover"
+                        />
+
+                        <div className="p-3">
+                          <h3 className="text-[11px] font-semibold text-white">
+                            {item.name.replace(/-/g, " ")}
+                          </h3>
+                        </div>
+                      </button>
+                    ))}
+
+                  </div>
+                </div>
+              )}
             </div>
-            <Link
-              to="/casestudy"
-              className="text-gray-700 hover:text-blue-600 text-sm font-semibold transition text-center">
+
+            {/* CASE STUDY */}
+            <button
+              onClick={() => handleNavigation("/casestudy")}
+              className="
+                text-[13px] font-semibold text-gray-700
+                hover:text-blue-600 transition duration-300
+              "
+            >
               CASE STUDY
-            </Link>
+            </button>
 
-            <Link
-              to="/contact"
-              className="text-gray-700 hover:text-blue-600 text-sm font-semibold transition text-center">
+            {/* CONTACT */}
+            {/* <button
+              onClick={() => handleNavigation("/contact")}
+              className="
+                text-[13px] font-semibold text-gray-700
+                hover:text-blue-600 transition duration-300
+              "
+            >
               CONTACT US
-            </Link>
+            </button> */}
 
-            {/* CTA Button */}
+            {/* DESIGN REQUEST */}
+            <button
+              onClick={() => handleNavigation("/design-request")}
+              className="
+                text-[13px] font-semibold text-gray-700
+                hover:text-blue-600 transition duration-300
+              "
+            >
+              DESIGN REQUEST
+            </button>
+
+            {/* CTA */}
             <button
               onClick={() => handleNavigation("/contact")}
-              className="ml-4 bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition">
-              Get Quote
+              className="
+                group ml-2
+                px-5 py-2.5 rounded-full
+                bg-gradient-to-r from-[#2563EB] to-black
+                text-white text-sm font-semibold
+                shadow-[0_10px_30px_rgba(0,0,0,0.35)]
+                hover:scale-105 transition-all duration-300
+                flex items-center gap-2
+              "
+            >
+              Contact Us
+
+              <FaArrowRight className="text-xs group-hover:translate-x-1 transition duration-300" />
             </button>
           </nav>
 
-          {/* Mobile Button */}
-          <div className="md:hidden">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              <svg
-                className="h-6 w-6 text-gray-700"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
-          </div>
+          {/* MOBILE BUTTON */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="
+              lg:hidden
+              w-10 h-10 rounded-xl
+              bg-blue-50 text-blue-600
+              flex items-center justify-center
+            "
+          >
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white shadow-lg rounded-xl p-4 space-y-2 text-center">
-            <button
-              onClick={() => handleNavigation("/")}
-              className="block w-full">
-              Home
-            </button>
-            <button
-              onClick={() => handleNavigation("/about")}
-              className="block w-full">
-              About
-            </button>
+      {/* ================= MOBILE MENU ================= */}
+      <div
+        className={`
+          lg:hidden overflow-hidden transition-all duration-500
+          ${isMenuOpen ? "max-h-[2500px]" : "max-h-0"}
+        `}
+      >
+        <div className="bg-gradient-to-br from-[#07152D] via-[#0B1F40] to-black border-t border-blue-500/20 px-5 py-5">
 
-            <p className="font-semibold">Brands</p>
-            <button
-              onClick={() => handleNavigation("/brands/amate")}
-              className="block w-full">
-              Amate
-            </button>
-            <button
-              onClick={() => handleNavigation("/brands/louismartin")}
-              className="block w-full">
-              LouisMartin
-            </button>
+          <div className="flex flex-col gap-2">
 
-            <button
-              onClick={() => handleNavigation("/solutions")}
-              className="block w-full">
-              Solutions
-            </button>
-            <button
-              onClick={() => handleNavigation("/casestudy")}
-              className="block w-full">
-              Case Study
-            </button>
+            {[
+              { name: "HOME", path: "/" },
+              { name: "ABOUT", path: "/about" },
+              { name: "CASE STUDY", path: "/casestudy" },
+              { name: "CONTACT", path: "/contact" },
+              { name: "DESIGN REQUEST", path: "/design-request" },
+            ].map((item, i) => (
+              <button
+                key={i}
+                onClick={() => handleNavigation(item.path)}
+                className="
+                  text-left px-4 py-3 rounded-xl
+                  text-white font-medium
+                  hover:bg-white/10
+                  transition duration-300
+                "
+              >
+                {item.name}
+              </button>
+            ))}
+
+            {/* MOBILE BRANDS */}
+            <div className="mt-3">
+
+              <button
+                onClick={() => setOpenBrands(!openBrands)}
+                className="
+                  w-full flex items-center justify-between
+                  px-4 py-3
+                  bg-white/10
+                  border border-white/10
+                  rounded-2xl
+                  font-semibold text-white
+                "
+              >
+                BRANDS
+                <FaChevronDown />
+              </button>
+
+              {openBrands && (
+                <div className="grid grid-cols-2 gap-3 mt-3">
+
+                  {brands.map((item, i) => (
+                    <button
+                      key={i}
+                      onClick={() => handleNavigation(item.link)}
+                      className="
+                        bg-white/5
+                        border border-white/10
+                        rounded-2xl overflow-hidden
+                      "
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="h-20 w-full object-cover"
+                      />
+
+                      <div className="p-2 text-xs font-semibold text-white">
+                        {item.name}
+                      </div>
+                    </button>
+                  ))}
+
+                </div>
+              )}
+            </div>
+
+            {/* MOBILE SOLUTIONS */}
+            <div className="mt-4">
+
+              <button
+                onClick={() => setOpenSolutions(!openSolutions)}
+                className="
+                  w-full flex items-center justify-between
+                  px-4 py-3
+                  bg-white/10
+                  border border-white/10
+                  rounded-2xl
+                  font-semibold text-white
+                "
+              >
+                SOLUTIONS
+                <FaChevronDown />
+              </button>
+
+              {openSolutions && (
+                <div className="grid grid-cols-2 gap-3 mt-3">
+
+                  {solutions.map((item, i) => (
+                    <button
+                      key={i}
+                      onClick={() =>
+                        handleNavigation(`/solutions/${item.name}`)
+                      }
+                      className="
+                        bg-white/5
+                        border border-white/10
+                        rounded-2xl overflow-hidden
+                      "
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="h-20 w-full object-cover"
+                      />
+
+                      <div className="p-2 text-[11px] font-semibold text-white">
+                        {item.name.replace(/-/g, " ")}
+                      </div>
+                    </button>
+                  ))}
+
+                </div>
+              )}
+            </div>
+
+            {/* CTA */}
             <button
               onClick={() => handleNavigation("/contact")}
-              className="block w-full">
-              Contact
+              className="
+                mt-5
+                w-full py-3 rounded-2xl
+                bg-gradient-to-r from-[#2563EB] to-black
+                text-white font-semibold
+              "
+            >
+              Get Quote
             </button>
+
           </div>
-        )}
+        </div>
       </div>
     </header>
   );

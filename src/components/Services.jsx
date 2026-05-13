@@ -1,3 +1,5 @@
+// src/components/Services.jsx
+
 import React from "react";
 import {
   FaTruck,
@@ -6,7 +8,9 @@ import {
   FaHeadset,
   FaChalkboardTeacher,
   FaPencilRuler,
+  FaArrowRight,
 } from "react-icons/fa";
+
 import { motion } from "framer-motion";
 
 const Services = () => {
@@ -14,99 +18,217 @@ const Services = () => {
     {
       title: "Distribution",
       description:
-        "Efficient distribution of world-class professional audio equipment through trusted channel partners.",
+        "Premium professional audio equipment distribution with trusted delivery and modern AV solutions.",
       icon: FaTruck,
     },
     {
       title: "Consulting",
       description:
-        "Expert consultation to analyze requirements and deliver optimized audio solutions.",
+        "Expert consultation for planning powerful and scalable audio visual experiences.",
       icon: FaComments,
     },
     {
       title: "Design",
       description:
-        "Creative and technical system design tailored for premium sound experiences.",
+        "Custom AV system design crafted for immersive and premium sound performance.",
       icon: FaPencilRuler,
     },
     {
       title: "Integration",
       description:
-        "Seamless integration of advanced systems to create powerful and scalable solutions.",
+        "Advanced system integration with seamless connectivity and smart performance.",
       icon: FaProjectDiagram,
     },
     {
       title: "Training",
       description:
-        "Professional training programs to empower teams with modern audio technologies.",
+        "Professional technical training programs for modern audio technologies.",
       icon: FaChalkboardTeacher,
     },
     {
       title: "Support",
       description:
-        "Reliable support services ensuring smooth performance and long-term system stability.",
+        "Reliable after-sales support ensuring long-term system stability and performance.",
       icon: FaHeadset,
     },
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className=" mx-auto px-4">
-        {/* 🔥 Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-50px bg-gradient-to-r from-[#6bb5df] to-[#2c6a99] uppercase tracking-widest text-white -500 mb-9">
-            Services
-          </h2>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#3b82b4]">
-            WHAT WE DO
-          </h1>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            Delivering innovative and reliable audio visual solutions with expertise,
-            precision, and cutting-edge technology.
-          </p>
-        </div>
+    <section
+      className="
+        relative
+        overflow-hidden
+        py-20 md:py-28
+        bg-gradient-to-br
+        from-[#06111F]
+        via-[#08192E]
+        to-[#0B2545]
+      "
+    >
+      {/* BACKGROUND GLOW */}
+      <div className="absolute top-[-150px] left-[-120px] w-[320px] h-[320px] bg-blue-500/20 blur-[120px] rounded-full"></div>
 
-        {/* 🔥 Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="absolute bottom-[-120px] right-[-120px] w-[320px] h-[320px] bg-cyan-400/10 blur-[120px] rounded-full"></div>
+
+      {/* GRID */}
+      <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#ffffff22_1px,transparent_1px),linear-gradient(to_bottom,#ffffff22_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+
+        {/* TOP */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto"
+        >
+          {/* SMALL TAG */}
+          <div
+            className="
+              inline-flex items-center gap-3
+              px-5 py-3 rounded-full
+              bg-blue-500/10
+              border border-blue-400/20
+              text-blue-300 text-sm font-medium
+              backdrop-blur-xl
+            "
+          >
+            OUR SERVICES
+          </div>
+
+          {/* HEADING */}
+          <h2
+            className="
+              mt-7
+              text-4xl md:text-5xl lg:text-6xl
+              font-black
+              leading-tight
+              text-white
+            "
+          >
+            Premium AV
+            <span className="block text-blue-400">
+              Solutions & Services
+            </span>
+          </h2>
+
+          {/* TEXT */}
+          <p
+            className="
+              mt-6
+              text-gray-300
+              leading-8
+              text-[15px] md:text-base
+            "
+          >
+            We provide complete professional audio visual solutions
+            with modern technology, smart integration and premium
+            support services for every type of venue.
+          </p>
+        </motion.div>
+
+        {/* SERVICES GRID */}
+        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+
           {services.map((service, index) => {
             const Icon = service.icon;
 
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.08,
+                }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative bg-white/70 backdrop-blur-xl border border-gray-200 rounded-3xl p-8 text-center shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-100/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                whileHover={{
+                  y: -10,
+                }}
+                className="
+                  group
+                  relative
+                  overflow-hidden
+                  rounded-[28px]
+                  border border-white/10
+                  bg-white/5
+                  backdrop-blur-xl
+                  p-7
+                  transition-all duration-500
+                  hover:border-blue-500/30
+                  hover:bg-white/[0.07]
+                "
+              >
+                {/* CARD GLOW */}
+                <div className="absolute top-[-40px] right-[-40px] w-32 h-32 bg-blue-500/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
-                {/* 🔥 Icon Circle (UPDATED) */}
+                {/* ICON */}
                 <motion.div
-                  whileHover={{ scale: 1.15, rotate: 8 }}
-                  transition={{ type: "spring", stiffness: 200 }}
-                  className="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-2xl 
-          bg-gradient-to-r from-[#4FA3D1] to-[#2F6FA3] shadow-lg group-hover:shadow-xl transition">
-                  <Icon className="text-white text-3xl" />
+                  whileHover={{
+                    rotate: 8,
+                    scale: 1.08,
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 300,
+                  }}
+                  className="
+                    relative z-10
+                    w-16 h-16
+                    rounded-2xl
+                    bg-gradient-to-br
+                    from-[#3B82F6]
+                    to-[#2563EB]
+                    flex items-center justify-center
+                    text-white text-2xl
+                    shadow-[0_10px_30px_rgba(37,99,235,0.4)]
+                  "
+                >
+                  <Icon />
                 </motion.div>
 
-                {/* Title */}
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {service.title}
-                </h3>
+                {/* CONTENT */}
+                <div className="relative z-10 mt-7">
 
-                {/* Divider */}
-                <div className="w-10 h-1 bg-gradient-to-r from-[#4FA3D1] to-[#2F6FA3] mx-auto mb-4 group-hover:w-16 transition-all duration-300"></div>
+                  <h3 className="text-2xl font-bold text-white">
+                    {service.title}
+                  </h3>
 
-                {/* Description */}
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {service.description}
-                </p>
+                  <div className="w-14 h-1 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 mt-4 mb-5 group-hover:w-24 transition-all duration-500"></div>
+
+                  <p className="text-gray-300 leading-7 text-sm">
+                    {service.description}
+                  </p>
+
+                  {/* BUTTON */}
+                  <button
+                    className="
+                      mt-7
+                      flex items-center gap-3
+                      text-blue-400
+                      font-semibold
+                      text-sm
+                      group-hover:gap-4
+                      transition-all duration-300
+                    "
+                  >
+                    Learn More
+
+                    <FaArrowRight className="text-xs" />
+                  </button>
+
+                </div>
+
+                {/* BORDER */}
+                <div className="absolute inset-0 rounded-[28px] border border-transparent group-hover:border-blue-500/20 transition duration-500"></div>
               </motion.div>
             );
           })}
+
         </div>
+
       </div>
     </section>
   );

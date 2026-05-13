@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import logo2 from "../assets/brand/logo2.jpg";
-import logo1 from "../assets/brand/logo1.jpg";
+import logo2 from "../assets/brand/logo2.png";
+import logo1 from "../assets/brand/logo1.png";
 
 const Products = () => {
   const navigate = useNavigate();

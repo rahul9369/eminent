@@ -15,47 +15,101 @@ const Clients = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className=" mx-auto px-4">
-        {/* 🔥 Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-sm uppercase tracking-widest text-gray-500 mb-3">
-            Trusted By
-          </h2>
+    <section className="relative bg-[#050B18] py-24 px-6 overflow-hidden">
 
-          <h1 className="text-4xl md:text-5xl font-bold text-[#3b82b4]">
-            OUR CLIENTS
+      {/* Background Glow */}
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-500/10 blur-[120px] rounded-full"></div>
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-cyan-500/10 blur-[120px] rounded-full"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+
+        {/* Heading */}
+        <div className="text-center mb-16">
+
+          <p className="uppercase tracking-[6px] text-blue-400 text-sm mb-4">
+            Trusted By Industry Leaders
+          </p>
+
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-5 leading-tight">
+            Our Premium <span className="text-blue-500">Clients</span>
           </h1>
 
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            We proudly collaborate with leading brands and organizations to
-            deliver exceptional audio-visual experiences.
+          <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full mb-6"></div>
+
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-8">
+            Eminent Audio Visual proudly collaborates with top brands and
+            organizations to deliver exceptional sound and AV experiences.
           </p>
+
         </div>
 
-        {/* 🔥 Logo Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-10 items-center">
+        {/* Clients Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+
           {clients.map((logo, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="group flex items-center justify-center p-5 rounded-2xl 
-              bg-white border border-gray-100 shadow-sm hover:shadow-xl 
-              transition-all duration-500">
+              transition={{
+                duration: 0.5,
+                delay: index * 0.06,
+              }}
+              whileHover={{
+                y: -8,
+                scale: 1.03,
+              }}
+              className="
+                relative
+                group
+                rounded-3xl
+                border border-white/10
+                bg-white/[0.03]
+                backdrop-blur-xl
+                p-8
+                h-36
+                flex
+                items-center
+                justify-center
+                overflow-hidden
+                hover:border-blue-500/50
+                transition-all
+                duration-500
+                shadow-[0_0_30px_rgba(0,0,0,0.25)]
+              "
+            >
+
+              {/* Hover Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/10 group-hover:to-cyan-500/10 transition duration-500"></div>
+
+              {/* Glow Border */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 shadow-[0_0_40px_rgba(59,130,246,0.35)]"></div>
+
+              {/* Logo */}
               <img
                 src={logo}
-                alt="client logo"
-                className="max-h-10 md:max-h-12 object-contain 
-  opacity-90 
-  group-hover:scale-110 
-  transition duration-500"
+                alt="Client Logo"
+                className="
+                  relative
+                  z-10
+                  max-h-12
+                  object-contain
+                  brightness-0
+                  invert
+                  opacity-75
+                  group-hover:opacity-100
+                  group-hover:scale-110
+                  transition-all
+                  duration-500
+                "
               />
+
             </motion.div>
           ))}
+
         </div>
+
       </div>
     </section>
   );

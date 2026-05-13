@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Blogs = () => {
   const blogs = [
@@ -23,62 +24,144 @@ const Blogs = () => {
   ];
 
   return (
-    <section className="py-5 bg-gradient-to-b from-gray-50 to-white">
-      <div className=" mx-auto px-4">
-        {/* 🔥 Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-sm uppercase tracking-widest text-gray-500 mb-3">
-            Insights & Updates
-          </h2>
+    <section className="relative py-24 px-6 bg-[#050B18] overflow-hidden">
 
-          <h1 className="text-4xl md:text-5xl font-bold text-[#3b82b4]">
-            LATEST NEWS
+      {/* Background Glow */}
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-500/10 blur-[120px] rounded-full"></div>
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-cyan-500/10 blur-[120px] rounded-full"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+
+        {/* Heading */}
+        <div className="text-center mb-16">
+
+          <p className="uppercase tracking-[5px] text-blue-400 text-sm mb-4">
+            Insights & Updates
+          </p>
+
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-5">
+            Latest <span className="text-blue-500">News</span>
           </h1>
 
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            Stay updated with the latest trends, insights, and innovations in
-            professional audio solutions.
+          <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full mb-6"></div>
+
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-8">
+            Stay updated with the latest trends, innovations, and professional
+            audio insights from Eminent Audio Visual.
           </p>
+
         </div>
 
-        {/* 🔥 Blog Cards */}
-        <div className="grid md:grid-cols-3 gap-10">
+        {/* Blog Cards */}
+        <div className="grid md:grid-cols-3 gap-8">
+
           {blogs.map((blog, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500">
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+              }}
+              whileHover={{
+                y: -8,
+              }}
+              className="
+                group
+                relative
+                rounded-3xl
+                overflow-hidden
+                border border-white/10
+                bg-white/[0.03]
+                backdrop-blur-xl
+                shadow-[0_0_30px_rgba(0,0,0,0.25)]
+                hover:border-blue-500/40
+                transition-all
+                duration-500
+              "
+            >
+
               {/* Image */}
-              <img
-                src={blog.img}
-                alt={blog.title}
-                className="w-full h-64 object-cover group-hover:scale-110 transition duration-700"
-              />
+              <div className="overflow-hidden">
+                <img
+                  src={blog.img}
+                  alt={blog.title}
+                  className="
+                    w-full
+                    h-72
+                    object-cover
+                    group-hover:scale-110
+                    transition
+                    duration-700
+                  "
+                />
+              </div>
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-90"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050B18] via-black/30 to-transparent"></div>
 
               {/* Content */}
-              <div className="absolute bottom-0 p-6 text-white">
-                <p className="text-xs text-gray-300 mb-2">{blog.date}</p>
+              <div className="absolute bottom-0 p-7">
 
-                <h3 className="text-lg font-semibold leading-snug line-clamp-2">
+                <p className="text-blue-300 text-sm mb-3 tracking-wide">
+                  {blog.date}
+                </p>
+
+                <h3 className="text-white text-xl font-semibold leading-snug mb-4 line-clamp-3">
                   {blog.title}
                 </h3>
 
-                <span className="inline-block mt-4 text-sm font-medium tracking-wide group-hover:translate-x-1 transition">
-                  Read More →
-                </span>
+                <button
+                  className="
+                    text-sm
+                    font-medium
+                    text-blue-400
+                    flex
+                    items-center
+                    gap-2
+                    group-hover:gap-4
+                    transition-all
+                    duration-300
+                  "
+                >
+                  Read More
+                  <span>→</span>
+                </button>
+
               </div>
-            </div>
+
+            </motion.div>
           ))}
+
         </div>
 
-        {/* 🔥 View All Button */}
-        <div className="text-center mt-14">
-          <button className="px-8 py-3 rounded-2xl   bg-gradient-to-r from-[#4FA3D1] to-[#2F6FA3] text-white text-sm font-medium tracking-wide shadow-lg hover:bg-gray-800 hover:scale-105 transition-all duration-300">
+        {/* Button */}
+        <div className="text-center mt-16">
+
+          <button
+            className="
+              px-10
+              py-4
+              rounded-2xl
+              bg-gradient-to-r
+              from-blue-500
+              to-cyan-500
+              text-white
+              font-semibold
+              tracking-wide
+              shadow-lg
+              hover:scale-105
+              transition-all
+              duration-300
+            "
+          >
             View All Blogs →
           </button>
+
         </div>
+
       </div>
     </section>
   );

@@ -22,7 +22,14 @@ import Night from "./components/solutions/Nightclub";
 import Resturant from "./components/solutions/Restaurants";
 import Retail from "./components/solutions/RetailOutlet";
 import Smart from "./components/solutions/SmartClassroom";
-
+import DesignRequest from "./pages/DesignRequest";
+import Corporate from "./pages/Corporate";
+// import DesignRequest from "./pages/DesignRequest";  
+// import Government from "./pages/Government";
+// import Hospitality from "./pages/Hospitality";
+// import Education from "./pages/Education";
+// import EventsLiveShows from "./pages/EventsLiveShows";
+// import Homehifi from "./pages/HomeHifi";
 function App() {
   return (
     <div className="min-h-screen bg-white">
@@ -49,6 +56,7 @@ function App() {
         <Route path="/solutions/retail-outlet" element={<Retail />} />
         <Route path="/solutions/smart-classroom" element={<Smart />} />
         {/* <Route path="/solutions/auditoriums" element={<Auditorius />} /> */}
+        <Route path="/design-request" element={<DesignRequest />} />
       </Routes>
       <Footer />
     </div>
