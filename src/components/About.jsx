@@ -165,9 +165,7 @@ const AboutSection = () => {
                 text-[15px]
               "
             >
-              We deliver premium professional audio visual solutions
-              for auditoriums, conference rooms, restaurants,
-              clubs, retail outlets, studios and smart spaces.
+              We are the experts devoted to advancing, showcase and circulate a portion of the best brands in the expert audio visual industry. Our group brings the inventive turn-key approach of giving arrangements beginning from bringing in and coordination of merchandise till the last execution and authorizing. Each arrangement made by us brings profitability, effectiveness and manageability towards life and organizations.
             </motion.p>
 
             <motion.p

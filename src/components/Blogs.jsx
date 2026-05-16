@@ -1,51 +1,79 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Blogs = () => {
+  const navigate = useNavigate();
+
   const blogs = [
     {
       date: "May 22, 2025",
       title:
         "Eminent Showcases Groundbreaking Audio Solutions at Global AV Expo 2025",
-      img: "https://images.unsplash.com/photo-1511379938547-c1f69419868d",
+      img: "https://images.unsplash.com/photo-1511379938547-c1f694198680d",
+      link: "/blog/audio-solutions-expo-2025",
     },
     {
       date: "May 22, 2025",
       title:
         "Eminent Wins Prestigious Best Pro Audio Brand Award at NCN AV Awards 2024",
       img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+      link: "/blog/pro-audio-brand-award",
     },
     {
       date: "May 21, 2025",
       title:
         "Eminent Experts Explain the Key Differences Between Line Array and Column Array Systems",
       img: "https://images.unsplash.com/photo-1580894908361-967195033215",
+      link: "/blog/line-array-vs-column-array",
     },
   ];
 
   return (
-    <section className="relative py-24 px-6 bg-[#050B18] overflow-hidden">
+    <section className="relative py-16 md:py-24 px-4 md:px-6 bg-[#050B18] overflow-hidden">
 
       {/* Background Glow */}
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-500/10 blur-[120px] rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-cyan-500/10 blur-[120px] rounded-full"></div>
+      <div className="absolute top-0 left-0 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-blue-500/10 blur-[120px] rounded-full"></div>
+
+      <div className="absolute bottom-0 right-0 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-cyan-500/10 blur-[120px] rounded-full"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-14 md:mb-16">
 
-          <p className="uppercase tracking-[5px] text-blue-400 text-sm mb-4">
+          <p className="uppercase tracking-[4px] md:tracking-[5px] text-blue-400 text-xs md:text-sm mb-4">
             Insights & Updates
           </p>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-5">
+          <h1
+            className="
+              text-3xl
+              sm:text-4xl
+              md:text-6xl
+              font-bold
+              text-white
+              mb-5
+              leading-tight
+            "
+          >
             Latest <span className="text-blue-500">News</span>
           </h1>
 
-          <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full mb-6"></div>
+          <div className="w-20 md:w-24 h-1 bg-blue-500 mx-auto rounded-full mb-6"></div>
 
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-8">
+          <p
+            className="
+              text-gray-400
+              max-w-2xl
+              mx-auto
+              text-sm
+              md:text-lg
+              leading-7
+              md:leading-8
+              px-2
+            "
+          >
             Stay updated with the latest trends, innovations, and professional
             audio insights from Eminent Audio Visual.
           </p>
@@ -53,7 +81,7 @@ const Blogs = () => {
         </div>
 
         {/* Blog Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
           {blogs.map((blog, index) => (
             <motion.div
@@ -70,7 +98,6 @@ const Blogs = () => {
               }}
               className="
                 group
-                relative
                 rounded-3xl
                 overflow-hidden
                 border border-white/10
@@ -80,40 +107,55 @@ const Blogs = () => {
                 hover:border-blue-500/40
                 transition-all
                 duration-500
+                flex
+                flex-col
               "
             >
 
               {/* Image */}
               <div className="overflow-hidden">
+
                 <img
                   src={blog.img}
                   alt={blog.title}
                   className="
                     w-full
-                    h-72
+                    h-56
+                    sm:h-64
+                    md:h-72
                     object-cover
                     group-hover:scale-110
                     transition
                     duration-700
                   "
                 />
+
               </div>
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050B18] via-black/30 to-transparent"></div>
-
               {/* Content */}
-              <div className="absolute bottom-0 p-7">
+              <div className="p-5 md:p-7 flex flex-col flex-grow">
 
                 <p className="text-blue-300 text-sm mb-3 tracking-wide">
                   {blog.date}
                 </p>
 
-                <h3 className="text-white text-xl font-semibold leading-snug mb-4 line-clamp-3">
+                <h3
+                  className="
+                    text-white
+                    text-lg
+                    md:text-xl
+                    font-semibold
+                    leading-7
+                    mb-5
+                    flex-grow
+                  "
+                >
                   {blog.title}
                 </h3>
 
+                {/* READ MORE BUTTON */}
                 <button
+                  onClick={() => navigate(blog.link)}
                   className="
                     text-sm
                     font-medium
@@ -137,18 +179,23 @@ const Blogs = () => {
 
         </div>
 
-        {/* Button */}
-        <div className="text-center mt-16">
+        {/* VIEW ALL BLOGS BUTTON */}
+        <div className="text-center mt-14 md:mt-16">
 
           <button
+            onClick={() => navigate("/blogs")}
             className="
-              px-10
-              py-4
+              px-8
+              md:px-10
+              py-3
+              md:py-4
               rounded-2xl
               bg-gradient-to-r
               from-blue-500
               to-cyan-500
               text-white
+              text-sm
+              md:text-base
               font-semibold
               tracking-wide
               shadow-lg

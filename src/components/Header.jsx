@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+
+import class1 from "../assets/solution/class1.JPG";
+import logo1 from "../assets/brand/logo1.png";
+import logo2 from "../assets/brand/logo2.png";
+
 import {
   FaChevronDown,
   FaBars,
@@ -44,14 +49,12 @@ const Header = () => {
     {
       name: "Amate Audio",
       link: "/brands/amate",
-      image:
-        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
+      image: logo1,
     },
     {
-      name: "LouisMartin",
+      name: "Louis Martin",
       link: "/brands/louismartin",
-      image:
-        "https://images.unsplash.com/photo-1516280440614-37939bbacd81",
+      image: logo2,
     },
   ];
 
@@ -92,14 +95,16 @@ const Header = () => {
       image:
         "https://images.unsplash.com/photo-1441986300917-64674bd600d8",
     },
+    // {
+    //   name: "Home-hifi",
+    //   image:
+    //     "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+    // },
     {
-      name: "Home-hifi",
-      image:
-        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+      name: "Smart-classroom",
+      image: class1,
     },
-    
   ];
-
 
   return (
     <header
@@ -173,16 +178,16 @@ const Header = () => {
                 <div
                   className="
                     absolute top-[45px] left-1/2 -translate-x-1/2
-                    w-[430px]
+                    w-[460px]
                     rounded-3xl
                     bg-gradient-to-br from-[#07152D] via-[#0B1F40] to-black
                     border border-blue-500/20
                     shadow-[0_20px_60px_rgba(0,0,0,0.45)]
                     backdrop-blur-xl
-                    p-5 z-50
+                    p-6 z-50
                   "
                 >
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-5">
 
                     {brands.map((item, i) => (
                       <button
@@ -191,23 +196,44 @@ const Header = () => {
                         className="
                           bg-white/5
                           border border-white/10
-                          rounded-2xl overflow-hidden
+                          rounded-3xl
+                          overflow-hidden
                           hover:border-blue-400/40
                           hover:-translate-y-1
                           transition-all duration-300
+                          group
                         "
                       >
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          className="h-24 w-full object-cover"
-                        />
 
-                        <div className="p-3">
-                          <h3 className="text-sm font-semibold text-white">
+                        {/* LOGO BOX */}
+                        <div
+                          className="
+                            bg-white
+                            h-[100px]
+                            flex items-center justify-center
+                            p-1
+                          "
+                        >
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            className="
+                              w-full
+                              h-full
+                              object-contain
+                              transition-all duration-300
+                              group-hover:scale-105
+                            "
+                          />
+                        </div>
+
+                        {/* BRAND NAME */}
+                        <div className="p-4">
+                          <h3 className="text-sm font-semibold text-white text-center">
                             {item.name}
                           </h3>
                         </div>
+
                       </button>
                     ))}
 
@@ -243,7 +269,7 @@ const Header = () => {
                 <div
                   className="
                     absolute top-[45px] left-1/2 -translate-x-1/2
-                    w-[780px]
+                    w-[880px]
                     rounded-3xl
                     bg-gradient-to-br from-[#07152D] via-[#0B1F40] to-black
                     border border-blue-500/20
@@ -298,17 +324,6 @@ const Header = () => {
             >
               CASE STUDY
             </button>
-
-            {/* CONTACT */}
-            {/* <button
-              onClick={() => handleNavigation("/contact")}
-              className="
-                text-[13px] font-semibold text-gray-700
-                hover:text-blue-600 transition duration-300
-              "
-            >
-              CONTACT US
-            </button> */}
 
             {/* DESIGN REQUEST */}
             <button
@@ -415,18 +430,30 @@ const Header = () => {
                       className="
                         bg-white/5
                         border border-white/10
-                        rounded-2xl overflow-hidden
+                        rounded-2xl
+                        overflow-hidden
                       "
                     >
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="h-20 w-full object-cover"
-                      />
 
-                      <div className="p-2 text-xs font-semibold text-white">
+                      {/* MOBILE LOGO FIX */}
+                      <div className="bg-white h-[120px] p-4 flex items-center justify-center">
+
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="
+                            w-full
+                            h-full
+                            object-contain
+                          "
+                        />
+
+                      </div>
+
+                      <div className="p-3 text-xs font-semibold text-white text-center">
                         {item.name}
                       </div>
+
                     </button>
                   ))}
 

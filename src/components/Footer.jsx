@@ -259,7 +259,7 @@ const Footer = () => {
                   </div>
 
                   <a
-                    href="tel:+9101171859054"
+                    href="tel:+919999999999"
                     className="text-sm text-gray-400 hover:text-blue-400 transition duration-300"
                   >
                     +91 9999 999 999
@@ -283,12 +283,14 @@ const Footer = () => {
               overflow-hidden
               border-y border-white/10
               shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+              relative
             "
           >
 
+            {/* MAP */}
             <iframe
               title="Eminent Audio Visual Location"
-              src="https://maps.google.com/maps?q=WZ-572/J,%20Ground%20Floor,%20Naraina%20Village,%20New%20Delhi%20110028&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=Eminent%20Audio%20Visual%20Naraina%20New%20Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="450"
               allowFullScreen=""
@@ -298,11 +300,62 @@ const Footer = () => {
                 w-full
                 h-[260px]
                 md:h-[450px]
-                grayscale-[20%]
-                hover:grayscale-0
-                transition duration-500
+                border-0
               "
             ></iframe>
+
+            {/* MAP CARD */}
+            <div
+              className="
+                absolute
+                bottom-6
+                left-6
+                bg-[#07152D]/90
+                backdrop-blur-xl
+                border border-white/10
+                rounded-3xl
+                p-5
+                max-w-[320px]
+                shadow-[0_10px_40px_rgba(0,0,0,0.45)]
+              "
+            >
+
+              <h3 className="text-white text-xl font-bold mb-2">
+                Eminent Audio Visual
+              </h3>
+
+              <p className="text-gray-300 text-sm leading-6 mb-4">
+                WZ-572/J, Ground Floor,
+                Naraina Village,
+                New Delhi - 110028
+              </p>
+
+              <a
+                href="https://maps.google.com/?q=Eminent Audio Visual Naraina New Delhi"
+                target="_blank"
+                rel="noreferrer"
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
+                  px-5
+                  py-2.5
+                  rounded-full
+                  bg-gradient-to-r
+                  from-[#2563EB]
+                  to-black
+                  text-white
+                  text-sm
+                  font-semibold
+                  hover:scale-105
+                  transition-all
+                  duration-300
+                "
+              >
+                Open In Google Maps
+              </a>
+
+            </div>
 
           </div>
 

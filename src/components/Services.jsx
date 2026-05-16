@@ -107,7 +107,7 @@ const Services = () => {
               text-white
             "
           >
-            Premium AV
+            AV
             <span className="block text-blue-400">
               Solutions & Services
             </span>

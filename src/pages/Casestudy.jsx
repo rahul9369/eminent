@@ -142,6 +142,7 @@ const CaseStudy = () => {
       label: "Events",
       icon: <FaBroadcastTower />,
     },
+    
   ];
 
   // ✅ Filter

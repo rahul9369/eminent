@@ -9,7 +9,7 @@ const brands = [
   },
   {
     id: "louismartin",
-    name: "LouisMartin",
+    name: "Louis Martin",
     path: "/brands/louismartin",
     img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
   },

@@ -22,6 +22,28 @@ const caseStudies = [
     details:
       "A centralized announcement and music system was designed for seamless communication and entertainment across all areas of the mall.",
   },
+  {
+    id: "office",
+    title: "Office Conference Setup",
+    img: "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6",
+    details:
+      "A centralized announcement and music system was designed for seamless communication and entertainment across all areas of the mall.",
+  },
+  {
+    id: "restaurant",
+    title: "Restaurant Audio System",
+    img: "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6",
+    details:
+      "A centralized announcement and music system was designed for seamless communication and entertainment across all areas of the mall.",
+  },
+  {
+    id: "dj-night",
+    title: "DJ Night Setup",
+    img: "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6",
+    details:
+      "A centralized announcement and music system was designed for seamless communication and entertainment across all areas of the mall.",
+  },
+  
 ];
 
 const CaseStudyDetails = () => {

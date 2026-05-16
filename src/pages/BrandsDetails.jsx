@@ -2,9 +2,9 @@ import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   FaArrowRight,
-  FaVolumeUp,
   FaHeadphones,
   FaBroadcastTower,
+  FaVolumeUp,
 } from "react-icons/fa";
 
 import linearray from "../assets/famouf.JPG";
@@ -24,22 +24,30 @@ const brandProducts = {
     {
       name: "Xcellence Series",
       img: xcellence,
-      desc: "Premium audio systems engineered for exceptional clarity and performance.",
+      desc: `Xcellence is the response of Amate Audio to the challenge of creating high-end products, delivering our passion for exceptional sound with uncompromising performance.
+
+Xcellence combines the latest technologies, meticulous attention to detail, and user-friendly design to meet the demands of the most professional audio applications with truly Xcellent performance.`,
     },
     {
       name: "Nítid-S Series",
       img: nitid1,
-      desc: "Compact yet powerful sound solutions with precision acoustics.",
+      desc: `Nítid, derived from the Latin words nitidus meaning bright, clear, and lustrous, and nitere meaning to shine, was launched in 2017 to celebrate 45 years of Amate Audio innovation.
+
+The Nítid speaker series combines advanced acoustic engineering with the latest digital amplification and processing technologies to deliver exceptional audio performance from ultra-compact speaker systems.`,
     },
     {
       name: "Electronics",
       img: elctronic,
-      desc: "Advanced processing and amplification technologies for modern AV systems.",
+      desc: `Amate Audio’s advanced outboard electronics include state-of-the-art Class-D power amplifiers engineered for exceptional power-to-weight performance and superior sonic quality.
+
+Since introducing the world’s first power amplifiers with onboard limiting in 1985, Amate Audio has remained a pioneer in processing amplifiers, delivering integrated power, advanced control capabilities, and switched-mode power supply technology for passive reinforcement systems.`,
     },
     {
       name: "DSP4 Software",
       img: dsp4,
-      desc: "Smart audio management software with seamless control and optimization.",
+      desc: `DSP Studio delivers an intuitive and modern platform for seamless audio system configuration, tuning, and live control. Designed for both Windows and MAC OS, it offers touchscreen support, auto-detection, and flexible cabinet management.
+
+With real-time monitoring, advanced EQ tuning, delay control, and detailed system feedback, DSP Studio provides complete precision and flexibility for professional sound environments.`,
     },
   ],
 
@@ -47,32 +55,32 @@ const brandProducts = {
     {
       name: "Line Array",
       img: linearray,
-      desc: "Professional line array systems designed for large venue coverage.",
+      desc: "Our Line Array Systems are meticulously designed to provide consistent and even sound coverage across large areas. With features like Uniform Sound Distribution, Controlled Dispersion, and High Output Levels, they ensure exceptional audio clarity and quality. These systems are the perfect solution for concerts, conferences, and other events where reliable and immersive sound is essential.",
     },
     {
       name: "Point Source",
       img: pointsource,
-      desc: "High-performance point source speakers with crystal-clear sound.",
+      desc: "High-performance point source speakers delivering crystal-clear audio reproduction.",
     },
     {
       name: "Column Speaker",
       img: column,
-      desc: "Slim and elegant column speakers with balanced audio projection.",
+      desc: "Elegant slim column speakers with balanced projection and premium sound quality.",
     },
     {
       name: "Commercial Speaker",
       img: commercial,
-      desc: "Reliable commercial audio solutions for modern spaces.",
+      desc: "Reliable commercial audio solutions for hospitality, retail, and corporate environments.",
     },
     {
       name: "Subwoofer",
       img: subwoofer,
-      desc: "Deep bass performance delivering impactful low-frequency sound.",
+      desc: "Deep impactful bass systems engineered for immersive low-frequency performance.",
     },
     {
       name: "Electronics",
       img: electronics,
-      desc: "Professional-grade electronic solutions for seamless AV integration.",
+      desc: "Professional-grade electronics for seamless AV integration and signal management.",
     },
   ],
 };
@@ -82,7 +90,22 @@ const brandLinks = {
   louismartin: "https://www.louismartinaudio.com/",
 };
 
+const seriesLinks = {
+  "Xcellence Series": "https://amateaudio.com/xcellence/",
+  "Nítid-S Series": "https://amateaudio.com/nitid/",
+  "Electronics": "https://amateaudio.com/electronics/",
+  "DSP4 Software": "https://amateaudio.com/software/dsp-studio4/",
+
+  "Line Array": "https://louismartinaudio.it/linearray",
+  "Point Source": "https://louismartinaudio.it/pointsource",
+  "Column Speaker": "https://louismartinaudio.it/columsound",
+  "Commercial Speaker": "https://louismartinaudio.it/stagemonitor",
+  "Subwoofer": "https://louismartinaudio.it/subwoofer",
+    "Electronics": "https://louismartinaudio.it/electronics",
+};
+
 const BrandProducts = () => {
+
   const { id } = useParams();
   const products = brandProducts[id];
 
@@ -95,21 +118,23 @@ const BrandProducts = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#071028] via-[#0B1736] to-[#12254A] text-white overflow-hidden">
+    <div className="bg-black text-white overflow-hidden">
 
       {/* HERO */}
-      <section className="relative py-24 px-6">
+      <section className="relative min-h-[60vh] md:h-[70vh] flex items-center justify-center text-center px-4 md:px-6 overflow-hidden">
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-[#050B18]"></div>
 
         {/* Glow */}
-        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-500/20 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-cyan-500/10 blur-[120px] rounded-full"></div>
+        <div className="absolute top-0 left-0 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-blue-500/20 blur-[100px] rounded-full"></div>
 
-        <div className="relative z-10 text-center max-w-4xl mx-auto">
+        <div className="relative z-10 max-w-4xl">
 
           <motion.p
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="uppercase tracking-[5px] text-blue-300 text-sm mb-5"
+            className="uppercase tracking-[4px] md:tracking-[6px] text-blue-400 text-xs md:text-sm mb-4"
           >
             Premium Audio Collection
           </motion.p>
@@ -118,161 +143,168 @@ const BrandProducts = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
-            className="text-5xl md:text-6xl font-bold capitalize leading-tight"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight capitalize"
           >
             {id}
-            <span className="text-blue-400"> Products</span>
+            <span className="text-blue-500"> Products</span>
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="text-gray-300 mt-6 leading-8 text-lg"
-          >
+          <p className="text-gray-300 mt-5 text-sm sm:text-base md:text-lg leading-7 md:leading-8 max-w-2xl mx-auto">
             Explore innovative professional audio solutions crafted for
-            outstanding sound performance, reliability, and modern AV
-            experiences.
-          </motion.p>
+            exceptional sound performance and immersive AV experiences.
+          </p>
 
         </div>
+
       </section>
 
-      {/* PRODUCTS */}
-      <section className="max-w-7xl mx-auto px-6 pb-24">
+      {/* SERIES */}
+      <section>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
+        {products.map((item, index) => (
 
-          {products.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
+          <motion.section
+            key={index}
+            initial={{ opacity: 0, y: 70 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="
+              relative
+              min-h-screen
+              flex
+              items-center
+              overflow-hidden
+            "
+          >
+
+            {/* BG IMAGE */}
+            <div
               className="
-                relative
-                group
-                bg-white/5
-                border border-white/10
-                backdrop-blur-xl
-                rounded-[30px]
-                overflow-hidden
-                shadow-2xl
-                hover:border-blue-500/40
-                transition-all duration-500
+                absolute
+                inset-0
+                bg-cover
+                bg-center
+                scale-110
               "
-            >
+              style={{
+                backgroundImage: `url(${item.img})`,
+              }}
+            ></div>
 
-              {/* Glow */}
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/10 blur-3xl rounded-full"></div>
+            {/* OVERLAY */}
+            <div className="absolute inset-0 bg-black/80"></div>
 
-              {/* IMAGE */}
-              <div className="relative h-[280px] flex items-center justify-center p-10 overflow-hidden">
+            {/* GLOW */}
+            <div className="absolute top-1/2 left-1/2 w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-blue-500/10 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2"></div>
 
-                <img
-                  src={item.img}
-                  alt={item.name}
-                  className="
-                    max-h-full
-                    object-contain
-                    group-hover:scale-110
-                    transition duration-700
-                    drop-shadow-2xl
-                  "
-                />
+            {/* CONTENT */}
+            <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6">
 
-              </div>
+              <div className="max-w-3xl">
 
-              {/* CONTENT */}
-              <div className="px-8 pb-8">
+                <div className="flex items-center gap-3 text-blue-400 mb-5">
 
-                <div className="flex items-center gap-3 mb-4 text-blue-400">
-                  <FaVolumeUp />
-                  <span className="text-sm uppercase tracking-[3px]">
-                    Professional Audio
+                  <FaVolumeUp className="text-sm md:text-base" />
+
+                  <span className="uppercase tracking-[3px] md:tracking-[4px] text-[10px] sm:text-xs md:text-sm">
+                    Professional Audio Series
                   </span>
+
                 </div>
 
-                <h2 className="text-2xl font-bold mb-4">
+                <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 md:mb-8 leading-tight">
                   {item.name}
                 </h2>
 
-                <p className="text-gray-300 leading-7 text-sm mb-6">
+                <p className="text-gray-300 text-sm sm:text-base md:text-xl leading-7 md:leading-9 mb-8 md:mb-10">
                   {item.desc}
                 </p>
 
                 {/* FEATURES */}
-                <div className="space-y-3 mb-8">
+                <div className="space-y-4 md:space-y-5 mb-10 md:mb-12">
 
-                  <div className="flex items-center gap-3 text-sm text-gray-300">
-                    <FaHeadphones className="text-blue-400" />
-                    Premium Sound Quality
+                  <div className="flex items-center gap-3 md:gap-4 text-gray-200">
+
+                    <FaHeadphones className="text-blue-400 text-lg md:text-xl" />
+
+                    <span className="text-sm sm:text-base md:text-lg">
+                      Premium Sound Performance
+                    </span>
+
                   </div>
 
-                  <div className="flex items-center gap-3 text-sm text-gray-300">
-                    <FaBroadcastTower className="text-blue-400" />
-                    Advanced Audio Technology
+                  <div className="flex items-center gap-3 md:gap-4 text-gray-200">
+
+                    <FaBroadcastTower className="text-blue-400 text-lg md:text-xl" />
+
+                    <span className="text-sm sm:text-base md:text-lg">
+                      Advanced Audio Engineering
+                    </span>
+
                   </div>
 
                 </div>
 
                 {/* BUTTON */}
-                <button
+                <a
+                  href={seriesLinks[item.name]}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="
-                    group/btn
                     inline-flex
                     items-center
                     gap-3
-                    px-6
-                    py-3
+                    px-6 md:px-8
+                    py-3 md:py-4
                     rounded-2xl
                     bg-gradient-to-r
                     from-blue-500
                     to-cyan-500
                     text-white
-                    text-sm
+                    text-sm md:text-base
                     font-medium
-                    shadow-lg
+                    shadow-2xl
                     hover:scale-105
                     transition duration-300
                   "
                 >
-                  Explore Product
-                  <FaArrowRight className="group-hover/btn:translate-x-1 transition" />
-                </button>
+                  Explore Series
+                  <FaArrowRight />
+                </a>
 
               </div>
 
-            </motion.div>
-          ))}
+            </div>
 
-        </div>
+          </motion.section>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+        ))}
+
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 md:py-24 px-4 md:px-6 bg-[#050B18]">
+
+        <div
           className="
-            mt-24
+            max-w-5xl
+            mx-auto
             bg-white/5
             border border-white/10
-            rounded-[40px]
-            p-12
+            rounded-[30px] md:rounded-[40px]
+            p-6 sm:p-8 md:p-16
             text-center
             backdrop-blur-xl
           "
         >
 
-          <h3 className="text-4xl font-bold mb-5">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 md:mb-6 leading-tight">
             Explore More From
             <span className="text-blue-400"> {id}</span>
           </h3>
 
-          <p className="text-gray-300 max-w-2xl mx-auto leading-8 mb-8">
+          <p className="text-gray-300 max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-7 md:leading-8 mb-8 md:mb-10">
             Visit the official brand website to discover the complete range of
             premium professional audio products and technologies.
           </p>
@@ -285,13 +317,14 @@ const BrandProducts = () => {
               inline-flex
               items-center
               gap-3
-              px-10
-              py-4
+              px-7 md:px-10
+              py-3 md:py-4
               rounded-2xl
               bg-gradient-to-r
               from-blue-500
               to-cyan-500
               text-white
+              text-sm md:text-base
               font-medium
               shadow-xl
               hover:scale-105
@@ -302,9 +335,10 @@ const BrandProducts = () => {
             <FaArrowRight />
           </a>
 
-        </motion.div>
+        </div>
 
       </section>
+
     </div>
   );
 };
