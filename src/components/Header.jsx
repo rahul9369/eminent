@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import class1 from "../assets/solution/class1.JPG";
+import class1 from "../assets/solution/class1.jpg";
 import logo1 from "../assets/brand/logo1.png";
 import logo2 from "../assets/brand/logo2.png";
 
