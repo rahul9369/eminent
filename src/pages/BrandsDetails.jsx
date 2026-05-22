@@ -14,8 +14,8 @@ import commercial from "../assets/dsf15.JPG";
 import subwoofer from "../assets/ksf218.JPG";
 import electronics from "../assets/plf4.jpg";
 
-import xcellence from "../assets/brand/xcellence.jpg";
-import nitid1 from "../assets/brand/nitid1.jpg";
+import xcellence from "../assets/brand/Xcellence.jpg";
+import nitid1 from "../assets/brand/Nitid1.jpg";
 import elctronic from "../assets/brand/electronic.jpg";
 import dsp4 from "../assets/brand/dsp4.jpg";
 
