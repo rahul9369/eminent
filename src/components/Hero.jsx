@@ -3,11 +3,11 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 // import  mainslide4 from "../assets/hero/mainslide4.JPG";
-import  mainslide5 from "../assets/hero/mainslide5.JPG";
-import  mainslide3 from "../assets/hero/mainslide3.JPG";
-import img2 from "../assets/hero/img2.JPG";
-import img1 from "../assets/hero/img1.JPG";
-import img6 from "../assets/hero/img6.JPG";
+import  mainslide5 from "../assets/hero/mainslide5.jpg";
+import  mainslide3 from "../assets/hero/mainslide3.jpg";
+import img2 from "../assets/hero/img2.jpg";
+import img1 from "../assets/hero/img1.jpg";
+import img6 from "../assets/hero/img6.jpg";
 
 const slides = [
   {
