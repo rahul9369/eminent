@@ -1,5 +1,5 @@
 import React from "react";
-import night1 from "../../assets/solution/night1.jpg";
+import night1 from "../../assets/solution/Night1.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
