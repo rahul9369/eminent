@@ -1,5 +1,5 @@
 import React from "react";
-import home1 from "../../assets/solution/home1.jpg";
+import home1 from "../../assets/solution/Home1.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
