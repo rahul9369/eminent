@@ -1,5 +1,5 @@
 import React from "react";
-import gym1 from "../../assets/solution/gym1.jpg";
+import gym1 from "../../assets/solution/Gym1.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
