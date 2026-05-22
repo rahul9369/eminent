@@ -1,5 +1,5 @@
 import React from "react";
-import conference1 from "../../assets/solution/conference1.jpg";
+import conference1 from "../../assets/solution/Conference1.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
